@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NST-SDC</title>
+    <link rel="icon" href="/photos/NST-SDC.png" type="image/jpeg">
+    <link rel="stylesheet" href="/index.css">
+    <script>
+        function setMinDOB() {
+            const dobInput = document.getElementById('DOB');
+            const today = new Date();
+            const minDOB = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
+            dobInput.max = minDOB.toISOString().split("T")[0];
+        }
+        window.onload = setMinDOB;
+
+        function validateAndRedirect(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+            const form = document.querySelector('form');
+            if (form.checkValidity()) {
+                // Redirect to home.html if form is valid
+                window.location.href = 'home.html';
+            } else {
+                // Show validation messages if form is invalid
+                form.reportValidity();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form">
+        <form action="http://localhost:3000/submit" method="post">
+            <div class="data0">
+                <label for="role">Role: </label>
+                <select name="role" id="role" required>
+                    <option value="member">Member</option>
+                    <option value="admin">Admin</option>
+                    <option value="students" selected>Students</option>
+                </select>
+            </div>
+            <div class="data1">
+                <label>Name: </label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="data2">
+                <label>Batch</label>
+                <input type="radio" id="A" name="Batch" value="A" required>
+                <label for="A">A</label>
+                <input type="radio" id="B" name="Batch" value="B" required>
+                <label for="B">B</label>
+                <input type="radio" id="C" name="Batch" value="C" required>
+                <label for="C">C</label>
+            </div>
+            <div class="data3">
+                <label for="urn">URN:</label>
+                <input type="text" name="urn" placeholder="Enter your URN" required>
+                <br>
+                <label for="DOB">Date of Birth</label>
+                <input type="date" id="DOB" name="D.O.B" required>
+                <br>
+                <label for="email">Email: </label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="data4">
+                <!-- Both buttons use validateAndRedirect for handling -->
+                <input type="submit" value="Log in" onclick="validateAndRedirect(event)">
+                <input type="submit" value="Sign up" onclick="validateAndRedirect(event)">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NST-SDC</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+<div class="body">
+<!-------------header------------>
+<header>
+    <h1>NST-SDC</h1>
+    <h3>Code, Create, Connect!</h3>
+    <div id="date-time"></div>
+</header>
+<hr>
+<div class="nav">
+    <div class="nav-item">
+        <a href="/home.html">Home</a>
+    </div>
+    <div class="nav-item">
+        <a href="/about.html">About</a>
+    </div>
+    <div class="nav-item">
+        <a href="/events.html">Events</a>
+    </div>
+    <div class="nav-item">
+        <a href="/gallery.html">Gallery</a>
+    </div>
+    <div class="nav-item">
+        <a href="/contact.html">Contact</a>
+    </div>
+</div>
+<!-------------/header/------------>
+<hr>
+<!-------------Hero Section------------>
+<h3 style="margin-left: 30px;"><u>Our Club</h3>
+<div class="herosection">
+    <div class="slider">
+        <div class="slides">
+            <div class="container">
+                <img src="/photos/heroimg1.jpeg" class="img">
+                <div class="button-container">
+                    <button class="load-more">Load more</button>
+                    <button class="learn-more">Learn more</button>
+                </div>
+            </div>
+            <div class="container">
+                <img src="/photos/heroimg2.jpeg" class="img">
+                <div class="button-container">
+                    <button class="load-more">Load more</button>
+                    <button class="learn-more">Learn more</button>
+                </div>
+            </div>
+            <div class="container">
+                <img src="/photos/heroimg3.jpeg" class="img">
+                <div class="button-container">
+                    <button class="load-more">Load more</button>
+                    <button class="learn-more">Learn more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------/Hero Section----------->
+<hr>
+<hr>
+<!-------------events------------>
+<h3 style="margin-left: 30px;"><u>Upcoming Events</h3>
+<div class="events">
+    <div class="slider">
+        <div class="slides">
+            <div>
+                <img src="/photos/event1.jpeg" class="img">
+                <p>•Event:Lorem Ipsum<br>•Date: xx.xx.xxxx<br>•Details:this is our 1st event held by NST-SDC</p>
+            </div>
+            <div>
+                <img src="/photos/event2.jpeg" class="img">
+                <p>•Event:Lorem Ipsum<br>•Date: xx.xx.xxxx<br>•Details:this is our 2nd event held by NST-SDC</p>
+            </div>
+            <div>
+                <img src="/photos/event3.jpeg" class="img">
+                <p>•Event:Lorem Ipsum<br>•Date: xx.xx.xxxx<br>•Details:this is our 3rd event held by NST-SDC</p>
+            </div>
+            <div>
+                <img src="/photos/event4.jpeg" class="img">
+                <p>•Event:Lorem Ipsum<br>•Date: xx.xx.xxxx<br>•Details:this is our 4th event held by NST-SDC</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------/events------------>
+<hr>
+<hr>
+<!-- News -->
+<h3 style="margin-left: 30px;"><u>News</h3>
+<div class="news">
+    <div>
+        <h4>News</h4>
+        <p>lorem Ipsum iugwuidgvbdacuobjeougadjfbadfgouahf hwdgiugadugfeqfuoeqhfu</p>
+        <button><a href="#">Read More</a></button>
+    </div>
+    <div>
+        <h4>News</h4>
+        <p> lorem Ipsum iugwuidgvbdacuobjeougadjfbadfgouahf hwdgiugadugfeqfuoeqhfu</p>
+        <button><a href="#">Read More</a></button>
+    </div>
+    <div>
+        <h4>News</h4>
+        <p>l orem Ipsum iugwuidgvbdacuobjeougadjfbadfgouahf hwdgiugadugfeqfuoeqhfu</p>
+        <button><a href="#">Read More</a></button>
+    </div>
+    <div>
+        <h4>News</h4>
+        <p>lorem Ipsum iugwuidgvbdacuobjeougadjfbadfgouahf hwdgiugadugfeqfuoeqhfu</p>
+        <button><a href="#">Read More</a></button>
+    </div>
+</div>
+<!-- /events -->
+<hr>
+<hr>
+<!-- footer -->
+<div class="footer">
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 NST-SDC: All rights reserved</p>
+            <div class="social-icons">
+                <img src="/photos/github.png" alt="GitHub" class="img">
+                <img src="/photos/instagram.png" alt="Instagram" class="img">
+                <img src="/photos/discord.png" alt="Discord" class="img">
+                <img src="/photos/youtube.png" alt="YouTube" class="img">
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- /footer -->
+</div>
+</body>
+<script>
+    // Function to update date and time
+function updateDateTime() {
+    const now = new Date();
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+    };
+    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+}
+
+// Initial call to set the date and time
+updateDateTime();
+
+setInterval(updateDateTime, 1000);
+</script>
+</html>

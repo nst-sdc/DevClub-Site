@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NST-SDC</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+<div class="body">
+<!-------------header------------>
+<header>
+    <h1>NST-SDC</h1>
+    <h3>Code, Create, Connect!</h3>
+    <div id="date-time"></div>
+</header>
+<hr>
+<div class="nav">
+    <div class="nav-item">
+        <a href="/home.html">Home</a>
+    </div>
+    <div class="nav-item">
+        <a href="/about.html">About</a>
+    </div>
+    <div class="nav-item">
+        <a href="/events.html">Events</a>
+    </div>
+    <div class="nav-item">
+        <a href="/gallery.html">Gallery</a>
+    </div>
+    <div class="nav-item">
+        <a href="/contact.html">Contact</a>
+    </div>
+</div>
+<!-------------/header/------------>
+<hr>
+
+<hr>
+<!-- footer -->
+<div class="footer">
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 NST-SDC: All rights reserved</p>
+            <div class="social-icons">
+                <img src="/photos/github.png" alt="GitHub" class="img">
+                <img src="/photos/instagram.png" alt="Instagram" class="img">
+                <img src="/photos/discord.png" alt="Discord" class="img">
+                <img src="/photos/youtube.png" alt="YouTube" class="img">
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- /footer -->
+</div>
+</body>
+<script>
+    // Function to update date and time
+function updateDateTime() {
+    const now = new Date();
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+    };
+    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+}
+
+// Initial call to set the date and time
+updateDateTime();
+
+// Update the time every second
+setInterval(updateDateTime, 1000);
+</script>
+</html>
