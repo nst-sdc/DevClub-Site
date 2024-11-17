@@ -1,11 +1,11 @@
 # Newton-SDC# NST-SDC: Student Developer Club Website
 
-Welcome to the official repository for the NST-SDC (National Student Developer Club) website! This website showcases the club’s activities, members, events, and resources for students interested in technology, coding, and software development. 
+Welcome to the official repository for the NST-SDC (Newton Student Developer Club) website! This website showcases the club’s activities, members, events, and resources for students interested in technology, coding, and software development. 
 
 Visit the website live at: [NST-SDC Website](https://jade-marigold-88c01e.netlify.app)
 
 ## 📜 About NST-SDC
-
+   
 The NST-SDC is a student-driven initiative aimed at bringing together individuals passionate about coding, creating, and connecting. Our club offers workshops, coding sessions, hackathons, and networking events designed to build technical skills, foster collaboration, and explore innovative solutions.
 
 ### Mission & Goals
@@ -14,6 +14,7 @@ The NST-SDC is a student-driven initiative aimed at bringing together individual
 - **Real-World Projects:** Develop applications and projects that can be showcased in competitions and professional portfolios.
 - **Networking Opportunities:** Connect members with industry professionals and alumni to open doors for internships and job placements.
 - **Innovation & Creativity:** Inspire students to explore new technologies and apply creative solutions.
+- **Team-Work:** Collaboration towards shared goals with unity.
 
 ## 🌐 Website Features
 
