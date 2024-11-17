@@ -1,5 +1,5 @@
 # Newton-SDC# NST-SDC: Student Developer Club Website
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/334d5e6f-b0a7-47e3-a7d2-b283a5a4a194/deploy-status)](https://app.netlify.com/sites/devclub-site/deploys)
 Welcome to the official repository for the NST-SDC (Newton Student Developer Club) website! This website showcases the club’s activities, members, events, and resources for students interested in technology, coding, and software development. 
 
 Visit the website live at: [NST-SDC Website](https://jade-marigold-88c01e.netlify.app)
