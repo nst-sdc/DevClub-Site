@@ -7,6 +7,12 @@
       "ROND" 0;
   }
 
+.share-tech-mono-regular {
+    font-family: "Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 body {
     font-family: 'Roboto', sans-serif;
     color: #f0f0f0;
@@ -42,7 +48,7 @@ select{
 }
 
 label {
-    
+    font-family: "Mono",;
     display: inline-block;
     margin-bottom: 0.5rem;
     margin-top: 1rem;
