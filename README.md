@@ -5,7 +5,7 @@ Welcome to the official repository for the NST-SDC (National Student Developer C
 Visit the website live at: [NST-SDC Website](https://jade-marigold-88c01e.netlify.app)
 
 ## 📜 About NST-SDC
-
+   
 The NST-SDC is a student-driven initiative aimed at bringing together individuals passionate about coding, creating, and connecting. Our club offers workshops, coding sessions, hackathons, and networking events designed to build technical skills, foster collaboration, and explore innovative solutions.
 
 ### Mission & Goals
