@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NST-SDC</title>
+    <link rel="stylesheet" href="/event.css">
+</head>
+<body>
+<div class="body">
+<!-------------header------------>
+<header>
+    <h1>NST-SDC</h1>
+    <h3>Code, Create, Connect!</h3>
+    <div id="date-time"></div>
+</header>
+<hr>
+<div class="nav">
+    <div class="nav-item">
+        <a href="/home.html">Home</a>
+    </div>
+    <div class="nav-item">
+        <a href="/about.html">About</a>
+    </div>
+    <div class="nav-item">
+        <a href="/events.html">Events</a>
+    </div>
+    <div class="nav-item">
+        <a href="/gallery.html">Gallery</a>
+    </div>
+    <div class="nav-item">
+        <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-item">
+        <a href="/achievements.html">Achievements</a>
+    </div>
+
+</div>
+<!-------------/header/------------>
+<hr>
+<!-- latest achievements -->
+<h2 style="text-align: center; font-size: 30px;"> Latest Achievements</h2>
+<div class="lateachieve-item" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 13px;">
+    <div style="width: 300px;">
+        <img src="/photos/event1.jpeg" style="width: 300px; height: 300px; border-radius: 15px;">
+    </div>
+    <div style="flex-grow: 1; padding-left: 20px;">
+        <h3>Project Name</h3>
+        <p style="font-size: 22px; font-style: italic;">This is the paragraph describing the project. You can provide more details about the project here, including information about the team, tasks, or outcomes. The paragraph will take up the remaining space on the right of the image and expand to fit the available width, ensuring a flexible and responsive layout.</p>
+    </div>
+</div>
+<div class="lateachieve-item" style="display: flex; align-items: flex-start; justify-content: space-between;margin-bottom: 13px;">
+    <div style="width: 300px;">
+        <img src="/photos/event2.jpeg" style="width: 300px; height: 300px; border-radius: 15px;">
+    </div>
+    <div style="flex-grow: 1; padding-left: 20px;">
+        <h3>Project Name</h3>
+        <p style="font-size: 22px; font-style: italic;">This is the paragraph describing the event. You can provide more details about the event here, including information about the speakers, activities, or outcomes. The paragraph will take up the remaining space on the right of the image and expand to fit the available width, ensuring a flexible and responsive layout.</p>
+    </div>
+</div>
+<!--/latest achievements -->
+
+
+<!--other achievements -->
+<h2 style="text-align: center;font-size: 30px"> Other Achievements</h2>
+<div class="otherachieve-item" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 13px;">
+    <div style="width: 300px;">
+        <img src="/photos/event1.jpeg" style="width: 300px; height: 300px; border-radius: 15px;">
+    </div>
+    <div style="flex-grow: 1; padding-left: 20px;">
+        <h3>Project Name</h3>
+        <p style="font-size: 22px; font-style: italic;">This is the paragraph describing the event. You can provide more details about the event here, including information about the speakers, activities, or outcomes. The paragraph will take up the remaining space on the right of the image and expand to fit the available width, ensuring a flexible and responsive layout.</p>
+    </div>
+</div>
+<div class="lateachieve-item" style="display: flex; align-items: flex-start; justify-content: space-between;margin-bottom: 13px;">
+    <div style="width: 300px;">
+        <img src="/photos/event3.jpeg" style="width: 300px; height: 300px; border-radius: 15px;">
+    </div>
+    <div style="flex-grow: 1; padding-left: 20px;">
+        <h3>Project Name</h3>
+        <p style="font-size: 22px; font-style: italic;">This is the paragraph describing the event. You can provide more details about the event here, including information about the speakers, activities, or outcomes. The paragraph will take up the remaining space on the right of the image and expand to fit the available width, ensuring a flexible and responsive layout.</p>
+    </div>
+</div>
+<!--/other achievements -->
+<!--footer -->
+<div class="footer">
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 NST-SDC: All rights reserved</p>
+            <div class="social-icons">
+                <img src="/photos/github.png" alt="GitHub" class="img">
+                <img src="/photos/instagram.png" alt="Instagram" class="img">
+                <img src="/photos/discord.png" alt="Discord" class="img">
+                <img src="/photos/youtube.png" alt="YouTube" class="img">
+            </div>
+        </div>
+    </footer>
+</div>
+<!--/footer -->
+</div>
+</body>
+<script>
+    // Function to update date and time
+function updateDateTime() {
+    const now = new Date();
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+    };
+    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+}
+
+// Initial call to set the date and time
+updateDateTime();
+
+// Update the time every second
+setInterval(updateDateTime, 1000);
+
+</script>
+</html>
+
