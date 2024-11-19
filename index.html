@@ -10,8 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NST-SDC</title>
-    <link rel="icon" href="/photos/NST-SDC.png" type="image/jpeg">
-    <link rel="stylesheet" href="/index.css">
+    <link rel="icon" href="/NST_SDC/photos/NST-SDC.png" type="image/jpeg">
+    <link rel="stylesheet" href="/NST_SDC/css/index.css">
     <script>
         function setMinDOB() {
             const dobInput = document.getElementById('DOB');
@@ -22,21 +22,24 @@
         window.onload = setMinDOB;
 
         function validateAndRedirect(event) {
-            event.preventDefault(); // Prevent form from submitting normally
+            event.preventDefault();         
             const form = document.querySelector('form');
             if (form.checkValidity()) {
-                // Redirect to home.html if form is valid
-                window.location.href = 'home.html';
+                const actionButton = event.submitter; //// Identify which button was clicked
+                if (actionButton && actionButton.value === "Log in") {
+                    window.location.href = 'home.html';
+                } else {
+                    window.location.href = 'signup.html';
+                }
             } else {
-                // Show validation messages if form is invalid
-                form.reportValidity();
+                form.reportValidity(); ////// Show validation messages if invalid
             }
         }
     </script>
 </head>
 <body>
     <div class="form">
-        <form action="http://localhost:3000/submit" method="post">
+        <form action="http://localhost:3000/submit" method="post" onsubmit="validateAndRedirect(event)">
             <div class="data0">
                 <label for="role">Role: </label>
                 <select name="role" id="role" required>
@@ -46,36 +49,34 @@
                 </select>
             </div>
             <div class="data1">
-                <label>Name: </label>
-                <input type="text" name="name" placeholder="Enter your name" required>
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
             </div>
             <div class="data2">
                 <label>Batch</label>
                 <input type="radio" id="A" name="Batch" value="A" required>
                 <label for="A">A</label>
-                <input type="radio" id="B" name="Batch" value="B" required>
+                <input type="radio" id="B" name="Batch" value="B">
                 <label for="B">B</label>
-                <input type="radio" id="C" name="Batch" value="C" required>
+                <input type="radio" id="C" name="Batch" value="C">
                 <label for="C">C</label>
-                <input type="radio" id="admin" name="Batch" value="admin" required>
-                <label for="admin">Admin</label>
             </div>
             <div class="data3">
                 <label for="urn">URN:</label>
-                <input type="text" name="urn" placeholder="Enter your URN" required>
+                <input type="text" id="urn" name="urn" placeholder="Enter your URN" required>
                 <br>
                 <label for="DOB">Date of Birth</label>
-                <input type="date" id="DOB" name="D.O.B" required>
+                <input type="date" id="DOB" name="D.O.B" required onfocus="setMinDOB()">
                 <br>
                 <label for="email">Email: </label>
-                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="data4"> 
+                <label for="pass">Password</label>
+                <input type="password" id="pass" name="password" placeholder="Enter your password" required>
             </div>
             <div class="data4">
-                <!-- Both buttons use validateAndRedirect for handling -->
-                <input type="submit" value="Log in" onclick="validateAndRedirect(event)">
-                <input type="submit" value="Sign up" onclick="validateAndRedirect(event)">
+                <button type="submit" name="action" value="Log in">Log in</button>
+                <button type="submit" name="action" value="Sign up">Sign up</button>
             </div>
         </form>
-    </div>
-</body>
-</html>
