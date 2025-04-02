@@ -18,6 +18,9 @@
     <script defer data-domain="nstsdc.org" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
+    
     <div class="container">
         <div class="form-card">
             <div class="header">
@@ -25,72 +28,111 @@
                 <p>Student Development Center Portal</p>
             </div>
             
-            <form id="authForm" action="http://localhost:3000/submit" method="post">
-                <div class="form-group">
-                    <label for="role">Role</label>
-                    <select id="role" name="role" required>
-                        <option value="" disabled selected>Select your role</option>
-                        <option value="students">Student</option>
-                        <option value="member">Member</option>
-                        <option value="admin">Admin</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Batch</label>
-                    <div class="radio-group">
-                        <input type="radio" id="batchA" name="batch" value="A" required>
-                        <label for="batchA">A</label>
-                        
-                        <input type="radio" id="batchB" name="batch" value="B">
-                        <label for="batchB">B</label>
-                        
-                        <input type="radio" id="batchC" name="batch" value="C">
-                        <label for="batchC">C</label>
+            <div class="form-toggle">
+                <button type="button" class="toggle-btn active" id="loginToggle">Log In</button>
+                <button type="button" class="toggle-btn" id="signupToggle">Sign Up</button>
+            </div>
+            
+            <form id="authForm">
+                <!-- Login Form Section -->
+                <div class="form-section active" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your registered email" required>
+                        <div class="error-message" id="loginEmailError">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginURN">URN</label>
+                        <input type="text" id="loginURN" name="loginURN" placeholder="Enter your URN" required>
+                        <div class="error-message" id="loginURNError">Please enter your URN</div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn login" id="loginButton">Log In</button>
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="urn">URN</label>
-                    <input type="text" id="urn" name="urn" placeholder="Enter your URN" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" id="dob" name="dob" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                <!-- Signup Form Section -->
+                <div class="form-section" id="signupForm">
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" name="role" required>
+                            <option value="" disabled selected>Select your role</option>
+                            <option value="students">Student</option>
+                            <option value="member">Member</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <div class="error-message" id="roleError">Please select a role</div>
                     </div>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="btn login" name="action" value="login">Log In</button>
-                    <button type="submit" class="btn signup" name="action" value="signup">Sign Up</button>
-                </div>
-                
-                <div class="form-footer">
-                    <a href="#" class="forgot-password">Forgot password?</a>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        <div class="error-message" id="nameError">Please enter your full name</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Batch</label>
+                        <div class="radio-group">
+                            <input type="radio" id="batchA" name="batch" value="A" required>
+                            <label for="batchA">A</label>
+                            
+                            <input type="radio" id="batchB" name="batch" value="B">
+                            <label for="batchB">B</label>
+                            
+                            <input type="radio" id="batchC" name="batch" value="C">
+                            <label for="batchC">C</label>
+                        </div>
+                        <div class="error-message" id="batchError">Please select a batch</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="urn">URN</label>
+                        <input type="text" id="urn" name="urn" placeholder="Enter your URN" required>
+                        <div class="error-message" id="urnError">Please enter a valid URN</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                        <div class="error-message" id="dobError">Please enter your date of birth</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" name="signupEmail" placeholder="Enter your email" required>
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn signup" id="signupButton">Sign Up</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Main script -->
     <script>
+        // Toggle between login and signup forms
+        document.getElementById('loginToggle').addEventListener('click', function() {
+            document.getElementById('loginForm').classList.add('active');
+            document.getElementById('signupForm').classList.remove('active');
+            document.getElementById('loginToggle').classList.add('active');
+            document.getElementById('signupToggle').classList.remove('active');
+        });
+        
+        document.getElementById('signupToggle').addEventListener('click', function() {
+            document.getElementById('signupForm').classList.add('active');
+            document.getElementById('loginForm').classList.remove('active');
+            document.getElementById('signupToggle').classList.add('active');
+            document.getElementById('loginToggle').classList.remove('active');
+        });
+        
         // Set minimum date for DOB (16 years old)
         function setMinDOB() {
             const dobInput = document.getElementById('dob');
@@ -99,35 +141,355 @@
             dobInput.max = minDOB.toISOString().split("T")[0];
         }
         
-        // Toggle password visibility
-        function togglePassword() {
-            const passwordInput = document.getElementById('password');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
+        // Validate email format
+        function isValidEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+        
+        // Validate URN format (assuming URN is alphanumeric and at least 5 characters)
+        function isValidURN(urn) {
+            return urn.length >= 3 && /^[a-zA-Z0-9]+$/.test(urn);
+        }
+        
+        // Show validation error
+        function showError(inputId, errorId, show) {
+            const input = document.getElementById(inputId);
+            const error = document.getElementById(errorId);
+            
+            if (show) {
+                input.classList.add('error');
+                error.style.display = 'block';
             } else {
-                passwordInput.type = 'password';
+                input.classList.remove('error');
+                error.style.display = 'none';
             }
         }
         
-        // Form submission
-        document.getElementById('authForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Validate signup form
+        function validateSignupForm() {
+            let isValid = true;
             
-            const action = e.submitter.value;
-            if (this.checkValidity()) {
-                // Simple redirect for demo
-                if (action === 'login') {
-                    window.location.href = 'home.html';
+            // Role validation
+            const role = document.getElementById('role').value;
+            if (!role) {
+                showError('role', 'roleError', true);
+                isValid = false;
+            } else {
+                showError('role', 'roleError', false);
+            }
+            
+            // Name validation
+            const name = document.getElementById('name').value.trim();
+            if (!name || name.length < 3) {
+                showError('name', 'nameError', true);
+                isValid = false;
+            } else {
+                showError('name', 'nameError', false);
+            }
+            
+            // Batch validation
+            const batchSelected = document.querySelector('input[name="batch"]:checked');
+            if (!batchSelected) {
+                showError('batchA', 'batchError', true);
+                isValid = false;
+            } else {
+                showError('batchA', 'batchError', false);
+            }
+            
+            // URN validation
+            const urn = document.getElementById('urn').value.trim();
+            if (!isValidURN(urn)) {
+                showError('urn', 'urnError', true);
+                isValid = false;
+            } else {
+                showError('urn', 'urnError', false);
+            }
+            
+            // DOB validation
+            const dob = document.getElementById('dob').value;
+            if (!dob) {
+                showError('dob', 'dobError', true);
+                isValid = false;
+            } else {
+                showError('dob', 'dobError', false);
+            }
+            
+            // Email validation
+            const email = document.getElementById('signupEmail').value.trim();
+            if (!isValidEmail(email)) {
+                showError('signupEmail', 'emailError', true);
+                isValid = false;
+            } else {
+                showError('signupEmail', 'emailError', false);
+            }
+            
+            return isValid;
+        }
+        
+        // Validate login form
+        function validateLoginForm() {
+            let isValid = true;
+            
+            // Email validation
+            const email = document.getElementById('loginEmail').value.trim();
+            if (!isValidEmail(email)) {
+                showError('loginEmail', 'loginEmailError', true);
+                isValid = false;
+            } else {
+                showError('loginEmail', 'loginEmailError', false);
+            }
+            
+            // URN validation
+            const urn = document.getElementById('loginURN').value.trim();
+            if (!isValidURN(urn)) {
+                showError('loginURN', 'loginURNError', true);
+                isValid = false;
+            } else {
+                showError('loginURN', 'loginURNError', false);
+            }
+            
+            return isValid;
+        }
+        
+        // Store user data in localStorage
+        document.getElementById('signupButton').addEventListener('click', function() {
+            if (validateSignupForm()) {
+                // Create user object
+                const userData = {
+                    role: document.getElementById('role').value,
+                    name: document.getElementById('name').value,
+                    batch: document.querySelector('input[name="batch"]:checked').value,
+                    urn: document.getElementById('urn').value,
+                    dob: document.getElementById('dob').value,
+                    email: document.getElementById('signupEmail').value
+                };
+                
+                // Store in localStorage
+                const users = JSON.parse(localStorage.getItem('users') || '{}');
+                
+                // Check if email already exists
+                if (users[userData.email]) {
+                    alert('This email is already registered. Please use a different email or login.');
+                    return;
+                }
+                
+                users[userData.email] = userData;
+                localStorage.setItem('users', JSON.stringify(users));
+                
+                // Show success message with smooth animation
+                const successMessage = document.createElement('div');
+                successMessage.style.color = '#4CAF50';
+                successMessage.style.padding = '10px';
+                successMessage.style.marginTop = '15px';
+                successMessage.style.textAlign = 'center';
+                successMessage.style.borderRadius = '5px';
+                successMessage.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
+                successMessage.style.animation = 'fadeIn 0.5s ease-in-out';
+                successMessage.innerHTML = '<span class="success-icon">✓</span> Registration successful! You can now log in.';
+                
+                const formActions = document.querySelector('#signupForm .form-actions');
+                formActions.insertAdjacentElement('afterend', successMessage);
+                
+                // Remove success message after 3 seconds
+                setTimeout(() => {
+                    successMessage.style.animation = 'fadeOut 0.5s ease-in-out';
+                    successMessage.addEventListener('animationend', () => {
+                        successMessage.remove();
+                        // Switch to login form
+                        document.getElementById('loginToggle').click();
+                        document.getElementById('loginEmail').value = userData.email;
+                        document.getElementById('loginURN').value = userData.urn;
+                    });
+                }, 3000);
+            }
+        });
+        
+        // Handle login
+        document.getElementById('loginButton').addEventListener('click', function() {
+            if (validateLoginForm()) {
+                const email = document.getElementById('loginEmail').value;
+                const urn = document.getElementById('loginURN').value;
+                
+                // Get users from localStorage
+                const users = JSON.parse(localStorage.getItem('users') || '{}');
+                
+                // Check if user exists and URN matches
+                if (users[email] && users[email].urn === urn) {
+                    // Store current user
+                    localStorage.setItem('currentUser', JSON.stringify(users[email]));
+                    
+                    // Add loading animation
+                    const loginBtn = document.getElementById('loginButton');
+                    const originalText = loginBtn.innerText;
+                    loginBtn.disabled = true;
+                    loginBtn.innerText = 'Logging in...';
+                    loginBtn.style.position = 'relative';
+                    
+                    const spinner = document.createElement('div');
+                    spinner.style.width = '20px';
+                    spinner.style.height = '20px';
+                    spinner.style.border = '3px solid rgba(255,255,255,.1)';
+                    spinner.style.borderRadius = '50%';
+                    spinner.style.borderTopColor = '#ffffff';
+                    spinner.style.animation = 'spin 1s linear infinite';
+                    spinner.style.position = 'absolute';
+                    spinner.style.right = '15px';
+                    spinner.style.top = '50%';
+                    spinner.style.transform = 'translateY(-50%)';
+                    
+                    loginBtn.appendChild(spinner);
+                    
+                    // Add keyframe animation for the spinner
+                    const style = document.createElement('style');
+                    style.innerHTML = `
+                        @keyframes spin {
+                            to {transform: translateY(-50%) rotate(360deg);}
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                    // Simulate loading delay
+                    setTimeout(() => {
+                        // Redirect to home page
+                        window.location.href = 'home.html';
+                    }, 1500);
                 } else {
-                    window.location.href = 'signup.html';
+                    alert('Invalid email or URN. Please check your details or register if you are a new user.');
                 }
             }
         });
         
-        // Initialize on load
-        window.onload = function() {
+        // Initialize particles.js with the complete configuration
+        function initParticles() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#00bcd4"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#00bcd4",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 3,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+        
+        // Add animation for fadeOut
+        const styleSheet = document.createElement('style');
+        styleSheet.innerHTML = `
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                to {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+        
+        // Initialize particles and set DOB constraints when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initParticles();
             setMinDOB();
-        };
+        });
     </script>
 </body>
 </html>
