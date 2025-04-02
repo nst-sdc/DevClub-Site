@@ -6,15 +6,15 @@
     <title>NST-SDC Portal</title>
     <link rel="icon" href="/NST_SDC/photos/NST-SDC.png" type="image/jpeg">
     
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
+
     <link rel="stylesheet" href="index.css">
     
-    <!-- Analytics -->
+
     <script defer data-domain="nstsdc.org" src="https://plausible.io/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
@@ -95,7 +95,7 @@
     </div>
 
     <script>
-        // Set minimum date for DOB (16 years old)
+
         function setMinDOB() {
             const dobInput = document.getElementById('dob');
             const today = new Date();
@@ -103,7 +103,7 @@
             dobInput.max = minDOB.toISOString().split("T")[0];
         }
         
-        // Toggle password visibility
+
         function togglePassword() {
             const passwordInput = document.getElementById('password');
             if (passwordInput.type === 'password') {
@@ -113,13 +113,13 @@
             }
         }
         
-        // Form submission
+
         document.getElementById('authForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const action = e.submitter.value;
             if (this.checkValidity()) {
-                // Simple redirect for demo
+
                 if (action === 'login') {
                     window.location.href = 'home.html';
                 } else {
@@ -128,12 +128,12 @@
             }
         });
         
-        // Initialize on load
+
         window.onload = function() {
             setMinDOB();
         };
 
-        // Particle.js initialization
+
         particlesJS("particles-js", {
             "particles": {
                 "number": {
@@ -240,8 +240,8 @@
             "retina_detect": true
         });
     </script>
-
-    <!-- Include Particle.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
