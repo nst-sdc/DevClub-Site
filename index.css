@@ -381,6 +381,7 @@ input[type="date"] {
     margin-right: 8px;
 }
 
+
 /* Additional animation */
 @keyframes pulse {
     0% {
@@ -393,3 +394,14 @@ input[type="date"] {
         box-shadow: 0 0 0 0 rgba(0, 188, 212, 0);
     }
 }
+
+}
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
