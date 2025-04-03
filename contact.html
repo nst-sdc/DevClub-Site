@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE
+html >
+  <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -172,7 +173,7 @@
             •Role: Backend Developer<br>
             •Email: arohi@example.com<br>
             •Discord: arohi#1234<br>
-            •Linkedin: linkedin.com/in/arohi<br>
+            •Linkedin: https://www.linkedin.com/in/arohi-jadhav-178a80340/<br>
             •<b><p style="margin-left: 8em;">President</p></b>
         </p>
     </div>
@@ -186,7 +187,7 @@
             •Role: DevOps<br>
             •Email: vivek@example.com<br>
             •Discord: vivek#1234<br>
-            •Linkedin: linkedin.com/in/vivek
+            •Linkedin: https://www.linkedin.com/in/vivek-wagadare/
         </p>
     </div>
     <div class="dev">
@@ -219,7 +220,7 @@
             •Role: Designer<br>
             •Email: riddhi@example.com<br>
             •Discord: riddhi#1234<br>
-            •Linkedin: linkedin.com/in/riddhi
+            •Linkedin: https://www.linkedin.com/in/riddhikhera/
         </p>
     </div>
     <div class="dev">
@@ -229,7 +230,7 @@
             •Role: Designer<br>
             •Email: sakina@example.com<br>
             •Discord: sakina#1234<br>
-            •Linkedin: linkedin.com/in/sakina
+            •Linkedin: https://www.linkedin.com/in/sakina-farukh-ahemad-809b3732b/
         </p>
     </div>
     <div class="dev">
@@ -239,7 +240,7 @@
             •Role: Designer<br>
             •Email: ananya@example.com<br>
             •Discord: ananya#1234<br>
-            •Linkedin: linkedin.com/in/ananya
+            •Linkedin: https://www.linkedin.com/in/ananya-gupta-7235a5319/
         </p>
     </div>
     <div class="dev">
@@ -282,7 +283,7 @@
             •Role: Mobile App Developer<br>
             •Email: kanishk@example.com<br>
             •Discord: kanish k#1234<br>
-            •Linkedin: linkedin.com/in/kanishk
+            •Linkedin: https://www.linkedin.com/in/kanishkranjan/
         </p>
     </div>
     <div class="dev">
@@ -292,7 +293,7 @@
             •Role: Mobile App Developer<br>
             •Email: daksh@example.com<br>
             •Discord: daksh#1234<br>
-            •Linkedin: linkedin.com/in/daksh<br>
+            •Linkedin: https://www.linkedin.com/in/daksh-saini-70a68830a/<br>
             •<b><p style="margin-left: 8em;">Vice-President</p></b>
         </p>
     </div>
@@ -379,19 +380,27 @@
 </div>
 </body>
 <script>
-    // Function to update date and time
+    // Function to update date and time display with formatted date and time
 function updateDateTime() {
-    const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-    };
-    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+    try {
+        const dateTimeElement = document.getElementById('date-time');
+        if (!dateTimeElement) return;
+        
+        const now = new Date();
+        const options = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit' 
+        };
+        
+        dateTimeElement.textContent = now.toLocaleDateString('en-US', options);
+    } catch (error) {
+        console.error('Error updating date and time:', error);
+    }
 }
 
 // Initial call to set the date and time
@@ -399,6 +408,6 @@ updateDateTime();
 
 // Update the time every second
 setInterval(updateDateTime, 1000);
-
 </script>
 </html>
+
