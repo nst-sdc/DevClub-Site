@@ -3,159 +3,516 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NST-SDC</title>
-    <link rel="stylesheet" href="/home.css">
+    <title>NST-SDC | Student Development Center</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="body">
-<!-------------header------------>
-<header>
-    <h1>NST-SDC</h1>
-    <h3>Code, Create, Connect!</h3>
-    <div id="date-time"></div>
-</header>
-<hr>
-<div class="nav">
-    <div class="nav-item">
-        <a href="/home.html">Home</a>
-    </div>
-    <div class="nav-item">
-        <a href="/about.html">About</a>
-    </div>
-    <div class="nav-item">
-        <a href="/events.html">Events</a>
-    </div>
-    <div class="nav-item">
-        <a href="/gallery.html">Gallery</a>
-    </div>
-    <div class="nav-item">
-        <a href="/contact.html">Contact</a>
-    </div>
-</div>
-<!-------------/header/------------>
-<hr>
-<!-------------Hero Section------------>
-<h3 style="margin-left: 30px;"><u>Our Club</h3>
-<div class="herosection">
-    <div class="slider">
-        <div class="slides">
-            <div class="container">
-                <img src="/photos/heroimg1.jpeg" class="img">
-                <div class="button-container">
-                    <button class="load-more">Load more</button>
-                    <button class="learn-more">Learn more</button>
-                </div>
+    <div id="particles-js"></div>
+    
+    <div class="welcome-splash" id="welcome-splash">
+        <div class="splash-content">
+            <div class="logo-container">
+                <div class="logo-animation">NST-SDC</div>
             </div>
-            <div class="container">
-                <img src="/photos/heroimg2.jpeg" class="img">
-                <div class="button-container">
-                    <button class="load-more">Load more</button>
-                    <button class="learn-more">Learn more</button>
-                </div>
-            </div>
-            <div class="container">
-                <img src="/photos/heroimg3.jpeg" class="img">
-                <div class="button-container">
-                    <button class="load-more">Load more</button>
-                    <button class="learn-more">Learn more</button>
-                </div>
-            </div>
+            <div class="tagline">Code. Create. Connect.</div>
         </div>
     </div>
-</div>
-<!-------------/Hero Section----------->
-<hr>
-<hr>
-<!-------------events------------>
-<h3 style="margin-left: 30px;"><u>Upcoming Events</h3>
-<div class="events">
-    <div class="slider">
-        <div class="slides">
-            <div>
-                <img src="/photos/event1.jpeg" class="img">
-                <p>•Event:Lorem Ipsum<br>•Date: xx.xx.xxxx<br>•Details:this is our 1st event held by NST-SDC</p>
+
+    <div class="main-content" id="main-content">
+        <!-------------header------------>
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>NST-SDC</h1>
+                    <div class="tagline">Code. Create. Connect.</div>
+                </div>
+                <div class="header-right">
+                    <div id="date-time"></div>
             </div>
-            <div>
-                <img src="/photos/event2.jpeg" class="img">
-                <p>•Event:Lorem Ipsum<br>•Date: xx.xx.xxxx<br>•Details:this is our 2nd event held by NST-SDC</p>
+        </header>
+        
+        <nav class="nav-container">
+            <div class="nav">
+                <div class="nav-item active">
+                    <a href="/home.html">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/about.html">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/events.html">Events</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/gallery.html">Gallery</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/contact.html">Contact</a>
+                </div>
             </div>
-            <div>
-                <img src="/photos/event3.jpeg" class="img">
-                <p>•Event:Lorem Ipsum<br>•Date: xx.xx.xxxx<br>•Details:this is our 3rd event held by NST-SDC</p>
+        </nav>
+        
+        <!-------------Hero Section------------>
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Welcome to NST Student Development Club</h2>
+                    <p>Where innovation meets community. Develop your skills, build amazing projects, and connect with like-minded individuals.</p>
+                </div>
+                <div class="hero-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="/photos/heroimg1.jpeg" alt="NST-SDC Event" class="carousel-img">
+                                <div class="image-overlay">
+                                    <h3>Innovation Hub</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/photos/heroimg2.jpeg" alt="NST-SDC Workshop" class="carousel-img">
+                                <div class="image-overlay">
+                                    <h3>Collaborative Learning</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/photos/heroimg3.jpeg" alt="NST-SDC Project" class="carousel-img">
+                                <div class="image-overlay">
+                                    <h3>Project Showcase</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <img src="/photos/event4.jpeg" class="img">
-                <p>•Event:Lorem Ipsum<br>•Date: xx.xx.xxxx<br>•Details:this is our 4th event held by NST-SDC</p>
+        </section>
+        
+        <!-------------Features Section------------>
+        <section class="features-section">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="features-container">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Technical Workshops</h3>
+                    <p>Learn cutting-edge technologies from industry experts and build your technical skills.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project Development</h3>
+                    <p>Work on real-world projects with guidance from experienced mentors.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Networking Events</h3>
+                    <p>Connect with industry professionals and build your professional network.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Competitions</h3>
+                    <p>Test your skills in hackathons and coding competitions to win exciting prizes.</p>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<!-------------/events------------>
-<hr>
-<hr>
-<!-- News -->
-<h3 style="margin-left: 30px;"><u>News</h3>
-<div class="news">
-    <div>
-        <h4>News</h4>
-        <p>lorem Ipsum iugwuidgvbdacuobjeougadjfbadfgouahf hwdgiugadugfeqfuoeqhfu</p>
-        <button><a href="#">Read More</a></button>
-    </div>
-    <div>
-        <h4>News</h4>
-        <p> lorem Ipsum iugwuidgvbdacuobjeougadjfbadfgouahf hwdgiugadugfeqfuoeqhfu</p>
-        <button><a href="#">Read More</a></button>
-    </div>
-    <div>
-        <h4>News</h4>
-        <p>l orem Ipsum iugwuidgvbdacuobjeougadjfbadfgouahf hwdgiugadugfeqfuoeqhfu</p>
-        <button><a href="#">Read More</a></button>
-    </div>
-    <div>
-        <h4>News</h4>
-        <p>lorem Ipsum iugwuidgvbdacuobjeougadjfbadfgouahf hwdgiugadugfeqfuoeqhfu</p>
-        <button><a href="#">Read More</a></button>
-    </div>
-</div>
-<!-- /events -->
-<hr>
-<hr>
-<!-- footer -->
-<div class="footer">
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 NST-SDC: All rights reserved</p>
-            <div class="social-icons">
-                <img src="/photos/github.png" alt="GitHub" class="img">
-                <img src="/photos/instagram.png" alt="Instagram" class="img">
-                <img src="/photos/discord.png" alt="Discord" class="img">
-                <img src="/photos/youtube.png" alt="YouTube" class="img">
+        </section>
+        
+        <!-------------Upcoming Events------------>
+        <section class="events-section">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-container">
+                <div class="events-slider" id="events-slider">
+                    <div class="events-track">
+                        <div class="event-card">
+                            <div class="event-image">
+                                <img src="/photos/event1.jpeg" alt="Event 1">
+                                <div class="event-date">
+                                    <span class="day">15</span>
+                                    <span class="month">APR</span>
+                                </div>
+                            </div>
+                            <div class="event-info">
+                                <h3>Web Development Workshop</h3>
+                                <div class="event-meta">
+                                    <span><i class="fas fa-clock"></i> 2:00 PM - 5:00 PM</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Main Auditorium</span>
+                                </div>
+                                <p>Learn modern web development techniques from industry professionals.</p>
+                                <button class="event-btn">Register Now</button>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card">
+                            <div class="event-image">
+                                <img src="/photos/event2.jpeg" alt="Event 2">
+                                <div class="event-date">
+                                    <span class="day">22</span>
+                                    <span class="month">APR</span>
+                                </div>
+                            </div>
+                            <div class="event-info">
+                                <h3>AI & Machine Learning Seminar</h3>
+                                <div class="event-meta">
+                                    <span><i class="fas fa-clock"></i> 10:00 AM - 1:00 PM</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Room 305</span>
+                                </div>
+                                <p>Discover the latest trends in AI and machine learning technologies.</p>
+                                <button class="event-btn">Register Now</button>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card">
+                            <div class="event-image">
+                                <img src="/photos/event3.jpeg" alt="Event 3">
+                                <div class="event-date">
+                                    <span class="day">29</span>
+                                    <span class="month">APR</span>
+                                </div>
+                            </div>
+                            <div class="event-info">
+                                <h3>Hackathon 2025</h3>
+                                <div class="event-meta">
+                                    <span><i class="fas fa-clock"></i> 9:00 AM - 9:00 PM</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Innovation Center</span>
+                                </div>
+                                <p>48-hour coding challenge to solve real-world problems.</p>
+                                <button class="event-btn">Register Now</button>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card">
+                            <div class="event-image">
+                                <img src="/photos/event4.jpeg" alt="Event 4">
+                                <div class="event-date">
+                                    <span class="day">05</span>
+                                    <span class="month">MAY</span>
+                                </div>
+                            </div>
+                            <div class="event-info">
+                                <h3>Mobile App Development</h3>
+                                <div class="event-meta">
+                                    <span><i class="fas fa-clock"></i> 3:00 PM - 6:00 PM</span>
+                                    <span><i class="fas fa-map-marker-alt"></i> Lab 201</span>
+                                </div>
+                                <p>Hands-on workshop on creating mobile applications with React Native.</p>
+                                <button class="event-btn">Register Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-arrow prev" id="prev-event"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-arrow next" id="next-event"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
-</div>
-<!-- /footer -->
-</div>
+        </section>
+        
+        <!-------------Latest News------------>
+        <section class="news-section">
+            <h2 class="section-title">Latest News</h2>
+            <div class="news-container">
+                <div class="news-card">
+                    <div class="news-header">
+                        <span class="news-category">Announcement</span>
+                        <span class="news-date">April 1, 2025</span>
+                    </div>
+                    <h3>New Partnership with Tech Giants</h3>
+                    <p>NST-SDC has partnered with leading tech companies to provide internship opportunities for our members.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-header">
+                        <span class="news-category">Achievement</span>
+                        <span class="news-date">March 28, 2025</span>
+                    </div>
+                    <h3>SDC Team Wins National Hackathon</h3>
+                    <p>Our student team secured first place at the National Innovation Challenge with their AI-powered solution.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-header">
+                        <span class="news-category">Resource</span>
+                        <span class="news-date">March 20, 2025</span>
+                    </div>
+                    <h3>New Learning Resources Available</h3>
+                    <p>Access to premium online courses and learning materials is now available for all SDC members.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-header">
+                        <span class="news-category">Update</span>
+                        <span class="news-date">March 15, 2025</span>
+                    </div>
+                    <h3>SDC Portal Gets a Major Upgrade</h3>
+                    <p>We've completely redesigned our portal to provide a better experience for all our members.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        <!-------------Footer------------>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">NST-SDC</div>
+                    <p>Empowering students with the skills and knowledge needed to excel in the tech industry.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="/about.html">About Us</a></li>
+                            <li><a href="/events.html">Events</a></li>
+                            <li><a href="/gallery.html">Gallery</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> NST Campus, Innovation Hub</li>
+                            <li><i class="fas fa-envelope"></i> contact@nstsdc.org</li>
+                            <li><i class="fas fa-phone"></i> +91 1234567890</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2025 NST-SDC: All rights reserved</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particles JS Configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#3252df"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#3252df",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Welcome splash animation
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('welcome-splash').classList.add('fade-out');
+                document.getElementById('main-content').classList.add('fade-in');
+            }, 2000);
+        });
+        
+        // Function to update date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit'
+            };
+            document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        // Initial call to set the date and time
+        updateDateTime();
+        setInterval(updateDateTime, 60000);
+
+        // Hero carousel
+        const carouselTrack = document.getElementById('carousel-track');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        
+        function updateCarousel() {
+            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        // Auto slide
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }, 5000);
+        
+        // Indicator click events
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+        
+        // Events slider
+        const eventsTrack = document.querySelector('.events-track');
+        const prevBtn = document.getElementById('prev-event');
+        const nextBtn = document.getElementById('next-event');
+        let currentEventSlide = 0;
+        const eventCards = document.querySelectorAll('.event-card');
+        const visibleCards = window.innerWidth > 768 ? 2 : 1;
+        
+        function updateEventSlider() {
+            const slideWidth = 100 / visibleCards;
+            eventsTrack.style.transform = `translateX(-${currentEventSlide * slideWidth}%)`;
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentEventSlide > 0) {
+                currentEventSlide--;
+                updateEventSlider();
+            }
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            if (currentEventSlide < eventCards.length - visibleCards) {
+                currentEventSlide++;
+                updateEventSlider();
+            }
+        });
+        
+        // Check for logged in user
+        window.onload = function() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (currentUser) {
+                document.getElementById('user-name').textContent = currentUser.name;
+            }
+        };
+    </script>
 </body>
-<script>
-    // Function to update date and time
-function updateDateTime() {
-    const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-    };
-    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
-}
-
-// Initial call to set the date and time
-updateDateTime();
-
-setInterval(updateDateTime, 1000);
-</script>
 </html>
