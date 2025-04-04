@@ -16,7 +16,6 @@
     
 
     <script defer data-domain="nstsdc.org" src="https://plausible.io/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
 
 </head>
@@ -24,10 +23,6 @@
 
     <!-- Particles.js container -->
     <div id="particles-js"></div>
-    
-
-    <div id="particles-js"></div>
-
     <div class="container">
         <div class="form-card">
             <div class="header">
@@ -122,772 +117,118 @@
 
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#00bcd4"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#00bcd4",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 3,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": true,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
+
     
     <!-- Main script -->
-    <script>
-        // Toggle between login and signup forms
-        document.getElementById('loginToggle').addEventListener('click', function() {
-            document.getElementById('loginForm').classList.add('active');
-            document.getElementById('signupForm').classList.remove('active');
-            document.getElementById('loginToggle').classList.add('active');
-            document.getElementById('signupToggle').classList.remove('active');
-        });
-        
-        document.getElementById('signupToggle').addEventListener('click', function() {
-            document.getElementById('signupForm').classList.add('active');
-            document.getElementById('loginForm').classList.remove('active');
-            document.getElementById('signupToggle').classList.add('active');
-            document.getElementById('loginToggle').classList.remove('active');
-        });
-        
-        // Set minimum date for DOB (16 years old)
-
-        // Toggle between login and signup forms
-        document.getElementById('loginToggle').addEventListener('click', function() {
-            document.getElementById('loginForm').classList.add('active');
-            document.getElementById('signupForm').classList.remove('active');
-            document.getElementById('loginToggle').classList.add('active');
-            document.getElementById('signupToggle').classList.remove('active');
-        });
-        
-        document.getElementById('signupToggle').addEventListener('click', function() {
-            document.getElementById('signupForm').classList.add('active');
-            document.getElementById('loginForm').classList.remove('active');
-            document.getElementById('signupToggle').classList.add('active');
-            document.getElementById('loginToggle').classList.remove('active');
-        });
-        
-        // Set minimum date for DOB (16 years old)
-
-
-        function setMinDOB() {
-            const dobInput = document.getElementById('dob');
-            const today = new Date();
-            const minDOB = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
-            dobInput.max = minDOB.toISOString().split("T")[0];
-        }
-        
-        // Validate email format
-        function isValidEmail(email) {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailPattern.test(email);
-        }
-        
-        // Validate URN format (assuming URN is alphanumeric and at least 5 characters)
-        function isValidURN(urn) {
-            return urn.length >= 3 && /^[a-zA-Z0-9]+$/.test(urn);
-        }
-        
-        // Show validation error
-        function showError(inputId, errorId, show) {
-            const input = document.getElementById(inputId);
-            const error = document.getElementById(errorId);
-            
-            if (show) {
-                input.classList.add('error');
-                error.style.display = 'block';
-
-        // Validate email format
-        function isValidEmail(email) {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailPattern.test(email);
-        }
-        
-        // Validate URN format (assuming URN is alphanumeric and at least 5 characters)
-        function isValidURN(urn) {
-            return urn.length >= 3 && /^[a-zA-Z0-9]+$/.test(urn);
-        }
-        
-        // Show validation error
-        function showError(inputId, errorId, show) {
-            const input = document.getElementById(inputId);
-            const error = document.getElementById(errorId);
-            
-            if (show) {
-                input.classList.add('error');
-                error.style.display = 'block';
-
-
-        function togglePassword() {
-            const passwordInput = document.getElementById('password');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-
-
-            } else {
-                input.classList.remove('error');
-                error.style.display = 'none';
-
-            } else {
-                input.classList.remove('error');
-                error.style.display = 'none';
-            }
-        }
-        // Validate signup form
-        function validateSignupForm() {
-            let isValid = true;
-            
-            // Role validation
-            const role = document.getElementById('role').value;
-            if (!role) {
-                showError('role', 'roleError', true);
-                isValid = false;
-            } else {
-                showError('role', 'roleError', false);
-            }
-            
-            // Name validation
-            const name = document.getElementById('name').value.trim();
-            if (!name || name.length < 3) {
-                showError('name', 'nameError', true);
-                isValid = false;
-            } else {
-                showError('name', 'nameError', false);
-            }
-            
-            // Batch validation
-            const batchSelected = document.querySelector('input[name="batch"]:checked');
-            if (!batchSelected) {
-                showError('batchA', 'batchError', true);
-                isValid = false;
-            } else {
-                showError('batchA', 'batchError', false);
-            }
-            
-            // URN validation
-            const urn = document.getElementById('urn').value.trim();
-            if (!isValidURN(urn)) {
-                showError('urn', 'urnError', true);
-                isValid = false;
-            } else {
-                showError('urn', 'urnError', false);
-            }
-            
-            // DOB validation
-            const dob = document.getElementById('dob').value;
-            if (!dob) {
-                showError('dob', 'dobError', true);
-                isValid = false;
-            } else {
-                showError('dob', 'dobError', false);
-            }
-            
-            // Email validation
-            const email = document.getElementById('signupEmail').value.trim();
-            if (!isValidEmail(email)) {
-                showError('signupEmail', 'emailError', true);
-                isValid = false;
-            } else {
-                showError('signupEmail', 'emailError', false);
-            }
-            
-            return isValid;
-        }
-        
-        // Validate login form
-        function validateLoginForm() {
-            let isValid = true;
-            
-            // Email validation
-            const email = document.getElementById('loginEmail').value.trim();
-            if (!isValidEmail(email)) {
-                showError('loginEmail', 'loginEmailError', true);
-                isValid = false;
-            } else {
-                showError('loginEmail', 'loginEmailError', false);
-            }
-            
-            // URN validation
-            const urn = document.getElementById('loginURN').value.trim();
-            if (!isValidURN(urn)) {
-                showError('loginURN', 'loginURNError', true);
-                isValid = false;
-            } else {
-                showError('loginURN', 'loginURNError', false);
-            }
-            
-            return isValid;
-        }
-        
-
-        // Validate signup form
-        function validateSignupForm() {
-            let isValid = true;
-            
-            // Role validation
-            const role = document.getElementById('role').value;
-            if (!role) {
-                showError('role', 'roleError', true);
-                isValid = false;
-            } else {
-                showError('role', 'roleError', false);
-            }
-            
-            // Name validation
-            const name = document.getElementById('name').value.trim();
-            if (!name || name.length < 3) {
-                showError('name', 'nameError', true);
-                isValid = false;
-            } else {
-                showError('name', 'nameError', false);
-            }
-            
-            // Batch validation
-            const batchSelected = document.querySelector('input[name="batch"]:checked');
-            if (!batchSelected) {
-                showError('batchA', 'batchError', true);
-                isValid = false;
-            } else {
-                showError('batchA', 'batchError', false);
-            }
-            
-            // URN validation
-            const urn = document.getElementById('urn').value.trim();
-            if (!isValidURN(urn)) {
-                showError('urn', 'urnError', true);
-                isValid = false;
-            } else {
-                showError('urn', 'urnError', false);
-            }
-            
-            // DOB validation
-            const dob = document.getElementById('dob').value;
-            if (!dob) {
-                showError('dob', 'dobError', true);
-                isValid = false;
-            } else {
-                showError('dob', 'dobError', false);
-            }
-            
-            // Email validation
-            const email = document.getElementById('signupEmail').value.trim();
-            if (!isValidEmail(email)) {
-                showError('signupEmail', 'emailError', true);
-                isValid = false;
-            } else {
-                showError('signupEmail', 'emailError', false);
-            }
-            
-            return isValid;
-        }
-        
-        // Validate login form
-        function validateLoginForm() {
-            let isValid = true;
-            
-            // Email validation
-            const email = document.getElementById('loginEmail').value.trim();
-            if (!isValidEmail(email)) {
-                showError('loginEmail', 'loginEmailError', true);
-                isValid = false;
-            } else {
-                showError('loginEmail', 'loginEmailError', false);
-            }
-            
-            // URN validation
-            const urn = document.getElementById('loginURN').value.trim();
-            if (!isValidURN(urn)) {
-                showError('loginURN', 'loginURNError', true);
-                isValid = false;
-            } else {
-                showError('loginURN', 'loginURNError', false);
-            }
-            
-            return isValid;
-        }
-        
-
-        // Store user data in localStorage
-        document.getElementById('signupButton').addEventListener('click', function() {
-            if (validateSignupForm()) {
-                // Create user object
-                const userData = {
-                    role: document.getElementById('role').value,
-                    name: document.getElementById('name').value,
-                    batch: document.querySelector('input[name="batch"]:checked').value,
-                    urn: document.getElementById('urn').value,
-                    dob: document.getElementById('dob').value,
-                    email: document.getElementById('signupEmail').value
-                };
-                
-                // Store in localStorage
-                const users = JSON.parse(localStorage.getItem('users') || '{}');
-                
-                // Check if email already exists
-                if (users[userData.email]) {
-                    alert('This email is already registered. Please use a different email or login.');
-                    return;
-                }
-                
-                users[userData.email] = userData;
-                localStorage.setItem('users', JSON.stringify(users));
-                
-                // Show success message with smooth animation
-                const successMessage = document.createElement('div');
-                successMessage.style.color = '#4CAF50';
-                successMessage.style.padding = '10px';
-                successMessage.style.marginTop = '15px';
-                successMessage.style.textAlign = 'center';
-                successMessage.style.borderRadius = '5px';
-                successMessage.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
-                successMessage.style.animation = 'fadeIn 0.5s ease-in-out';
-                successMessage.innerHTML = '<span class="success-icon">✓</span> Registration successful! You can now log in.';
-                
-                const formActions = document.querySelector('#signupForm .form-actions');
-                formActions.insertAdjacentElement('afterend', successMessage);
-                
-                // Remove success message after 3 seconds
-                setTimeout(() => {
-                    successMessage.style.animation = 'fadeOut 0.5s ease-in-out';
-                    successMessage.addEventListener('animationend', () => {
-                        successMessage.remove();
-                        // Switch to login form
-                        document.getElementById('loginToggle').click();
-                        document.getElementById('loginEmail').value = userData.email;
-                        document.getElementById('loginURN').value = userData.urn;
-                    });
-                }, 3000);
-            }
-        });
-        
-        // Handle login
-        document.getElementById('loginButton').addEventListener('click', function() {
-            if (validateLoginForm()) {
-                const email = document.getElementById('loginEmail').value;
-                const urn = document.getElementById('loginURN').value;
-                
-                // Get users from localStorage
-                const users = JSON.parse(localStorage.getItem('users') || '{}');
-                
-                // Check if user exists and URN matches
-                if (users[email] && users[email].urn === urn) {
-                    // Store current user
-                    localStorage.setItem('currentUser', JSON.stringify(users[email]));
-                    
-                    // Add loading animation
-                    const loginBtn = document.getElementById('loginButton');
-                    const originalText = loginBtn.innerText;
-                    loginBtn.disabled = true;
-                    loginBtn.innerText = 'Logging in...';
-                    loginBtn.style.position = 'relative';
-                    
-                    const spinner = document.createElement('div');
-                    spinner.style.width = '20px';
-                    spinner.style.height = '20px';
-                    spinner.style.border = '3px solid rgba(255,255,255,.1)';
-                    spinner.style.borderRadius = '50%';
-                    spinner.style.borderTopColor = '#ffffff';
-                    spinner.style.animation = 'spin 1s linear infinite';
-                    spinner.style.position = 'absolute';
-                    spinner.style.right = '15px';
-                    spinner.style.top = '50%';
-                    spinner.style.transform = 'translateY(-50%)';
-                    
-                    loginBtn.appendChild(spinner);
-                    
-                    // Add keyframe animation for the spinner
-                    const style = document.createElement('style');
-                    style.innerHTML = `
-                        @keyframes spin {
-                            to {transform: translateY(-50%) rotate(360deg);}
-                        }
-                    `;
-                    document.head.appendChild(style);
-                    
-                    // Simulate loading delay
-                    setTimeout(() => {
-                        // Redirect to home page
-                        window.location.href = 'home.html';
-                    }, 1500);
-
-
-        document.getElementById('authForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const action = e.submitter.value;
-            if (this.checkValidity()) {
-
-                if (action === 'login') {
-                    window.location.href = 'home.html';
-
-                } else {
-                    alert('Invalid email or URN. Please check your details or register if you are a new user.');
-                }
-            }
-        });
-
-        // Initialize particles.js with the complete configuration
-        function initParticles() {
-            particlesJS('particles-js', {
-                "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#00bcd4"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": false,
-                        "anim": {
-                            "enable": false,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true,
-                        "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#00bcd4",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 3,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": true,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 140,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
-                        },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        },
-                        "remove": {
-                            "particles_nb": 2
-                        }
-                    }
-                },
-                "retina_detect": true
-            });
-        }
-        
-        // Add animation for fadeOut
-        const styleSheet = document.createElement('style');
-        styleSheet.innerHTML = `
-            @keyframes fadeOut {
-                from {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-                to {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-            }
-        `;
-        document.head.appendChild(styleSheet);
-        
-        // Initialize particles and set DOB constraints when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            initParticles();
-            setMinDOB();
-
-        // Initialize particles.js with the complete configuration
-        function initParticles() {
-            particlesJS('particles-js', {
-                "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#00bcd4"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": false,
-                        "anim": {
-                            "enable": false,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true,
-                        "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#00bcd4",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 3,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": true,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 140,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
-                        },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        },
-                        "remove": {
-                            "particles_nb": 2
-                        }
-                    }
-                },
-                "retina_detect": true
-            });
-        }
-        
-        // Add animation for fadeOut
-        const styleSheet = document.createElement('style');
-        styleSheet.innerHTML = `
-            @keyframes fadeOut {
-                from {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-                to {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-            }
-        `;
-        document.head.appendChild(styleSheet);
-        
-        // Initialize particles and set DOB constraints when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            initParticles();
-            setMinDOB();
-
-        window.onload = function() {
-            setMinDOB();
-        };
-
-
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-
-        });
-    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
