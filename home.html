@@ -32,6 +32,15 @@
                 </div>
                 <div class="header-right">
                     <div id="date-time"></div>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-switch" class="theme-switch">
+                        <label for="theme-switch" class="theme-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-ball"></span>
+                        </label>
+                    </div>
+                </div>
             </div>
         </header>
         
@@ -51,6 +60,9 @@
                 </div>
                 <div class="nav-item">
                     <a href="/contact.html">Contact</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/achievements.html">Achievements</a>
                 </div>
             </div>
         </nav>
@@ -283,6 +295,7 @@
                             <li><a href="/events.html">Events</a></li>
                             <li><a href="/gallery.html">Gallery</a></li>
                             <li><a href="/contact.html">Contact</a></li>
+                            <li><a href="/achievements.html">Achievements</a></li>
                         </ul>
                     </div>
                     
@@ -290,7 +303,7 @@
                         <h3>Contact Us</h3>
                         <ul class="contact-info">
                             <li><i class="fas fa-map-marker-alt"></i> NST Campus, Innovation Hub</li>
-                            <li><i class="fas fa-envelope"></i> contact@nstsdc.org</li>
+                            <li><i class="fas fa-envelope"></i> info@nst-sdc.edu</li>
                             <li><i class="fas fa-phone"></i> +91 1234567890</li>
                         </ul>
                     </div>
@@ -312,7 +325,7 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
         // Particles JS Configuration
         particlesJS('particles-js', {
@@ -325,7 +338,7 @@
                     }
                 },
                 "color": {
-                    "value": "#3252df"
+                    "value": "#00bcd4"
                 },
                 "shape": {
                     "type": "circle",
@@ -360,7 +373,7 @@
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#3252df",
+                    "color": "#00bcd4",
                     "opacity": 0.4,
                     "width": 1
                 },
@@ -427,6 +440,24 @@
                 document.getElementById('welcome-splash').classList.add('fade-out');
                 document.getElementById('main-content').classList.add('fade-in');
             }, 2000);
+            
+            // Check for saved theme preference or use default dark theme
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-theme');
+                document.getElementById('theme-switch').checked = true;
+            }
+        });
+        
+        // Theme toggle functionality
+        const themeSwitch = document.getElementById('theme-switch');
+        themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('light-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.body.classList.remove('light-theme');
+                localStorage.setItem('theme', 'dark');
+            }
         });
         
         // Function to update date and time
@@ -505,14 +536,6 @@
                 updateEventSlider();
             }
         });
-        
-        // Check for logged in user
-        window.onload = function() {
-            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-            if (currentUser) {
-                document.getElementById('user-name').textContent = currentUser.name;
-            }
-        };
     </script>
 </body>
 </html>
