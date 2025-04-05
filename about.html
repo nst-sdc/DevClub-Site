@@ -4,131 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NST-SDC</title>
-    <link rel="stylesheet" href="/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
-<div class="body">
-<!-------------header------------>
-<header>
-    <h1>NST-SDC</h1>
-    <h3>Code, Create, Connect!</h3>
-    <div id="date-time"></div>
-</header>
-<hr>
-<div class="nav">
-    <div class="nav-item">
-        <a href="/home.html">Home</a>
-    </div>
-    <div class="nav-item">
-        <a href="/about.html">About</a>
-    </div>
-    <div class="nav-item">
-        <a href="/events.html">Events</a>
-    </div>
-    <div class="nav-item">
-        <a href="/gallery.html">Gallery</a>
-    </div>
-    <div class="nav-item">
-        <a href="/contact.html">Contact</a>
-    </div>
-</div>
-<!-------------/header/------------>
-<hr>
-<!-- Aim And Motive -->
-<div class="aim"><u><h4>Aims & Motives</h4></u>
-<p><b>•Encourage Collaboration:</b>Promote teamwork through group projects and collaborative coding sessions.
-</p>
-<p><b>•Enhance Skills:</b>Organize workshops and training sessions to improve technical skills and knowledge in software development.
-</p>
-<p><b>•Create Projects:</b>Develop real-world applications and projects that can be showcased in portfolios or competitions.
-</p>
-<p><b>•Networking Opportunities: </b>Facilitate connections with industry professionals and alumni to enhance career prospects.
-</p>
-<p><b>•Host Events:</b>Organize hackathons, coding competitions, and guest speaker events to engage members and the wider community.
-</p>
-<p><b>•Promote Innovation:</b> Encourage members to explore new technologies and creative solutions to problems.
-</p>
-</div>
-<!--/Aim And Motive -->
-<hr>
-<!-- Team -->
-<div class="team">
-    <h4>Meet Our Team</h4>
-    <div class="team-member">
-        <div class="mentors">
-            <img src="/photos/profile.jpeg" alt="Mentor Profile 1"> 
-            <img src="/photos/profile.jpeg" alt="Mentor Profile 2">
-        </div>
-    </div>
-    <div class="students">
-        <img src="/photos/profile.jpg" alt="Student Profile 1">
-        <img src="/photos/profile.jpg" alt="Student Profile 2">
-        <img src="/photos/profile.jpg" alt="Student Profile 3">
-        <img src="/photos/profile.jpg" alt="Student Profile 4">
-        <img src="/photos/profile.jpg" alt="Student Profile 5">
-        <img src="/photos/profile.jpg" alt="Student Profile 6">
-        <img src="/photos/profile.jpg" alt="Student Profile 7">
-        <img src="/photos/profile.jpg" alt="Student Profile 8">
-        <img src="/photos/profile.jpg" alt="Student Profile 9">
-        <img src="/photos/profile.jpg" alt="Student Profile 10">
-        <img src="/photos/profile.jpg" alt="Student Profile 11">
-        <img src="/photos/profile.jpg" alt="Student Profile 12">
-        <img src="/photos/profile.jpg" alt="Student Profile 13">
-        <img src="/photos/profile.jpg" alt="Student Profile 14">
-        <img src="/photos/profile.jpg" alt="Student Profile 15">
-        <img src="/photos/profile.jpg" alt="Student Profile 16">
-        <img src="/photos/profile.jpg" alt="Student Profile 17">
-        <img src="/photos/profile.jpg" alt="Student Profile 18">
-        <img src="/photos/profile.jpg" alt="Student Profile 19">
-        <img src="/photos/profile.jpg" alt="Student Profile 20">
-        <img src="/photos/profile.jpg" alt="Student Profile 21">
-        <img src="/photos/profile.jpg" alt="Student Profile 22">
-        <img src="/photos/profile.jpg" alt="Student Profile 23">
-        <img src="/photos/profile.jpg" alt="Student Profile 24">
-        <img src="/photos/profile.jpg" alt="Student Profile 25">
-        <img src="/photos/profile.jpg" alt="Student Profile 26">
-        <img src="/photos/profile.jpg" alt="Student Profile 27">
-        <img src="/photos/profile.jpg" alt="Student Profile 28">
-    </div>
-
-<!-- footer -->
-<div class="footer">
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 NST-SDC: All rights reserved</p>
-            <div class="social-icons">
-                <img src="/photos/github.png" alt="GitHub" class="img">
-                <img src="/photos/instagram.png" alt="Instagram" class="img">
-                <img src="/photos/discord.png" alt="Discord" class="img">
-                <img src="/photos/youtube.png" alt="YouTube" class="img">
+    <canvas id="neural-bg"></canvas>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <h1 class="logo">NST-SDC</h1>
+            </div>
+            <h3 class="tagline">Code, Create, Connect!</h3>
+            <div id="date-time"></div>
+        </header>
+        
+        <div class="nav-container">
+            <div class="nav">
+                <div class="nav-item">
+                    <a href="/home.html">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/about.html">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/events.html">Events</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/gallery.html">Gallery</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/contact.html">Contact</a>
+                </div>
             </div>
         </div>
-    </footer>
-</div>
-<!-- /footer -->
-</div>
+        
+        <hr class="divider">
+        
+        <!-- Aim And Motive -->
+        <div class="aim">
+            <h4 class="section-title">Aims & Motives</h4>
+            <div class="aim-grid">
+                <div class="aim-item">
+                    <div class="aim-title">Encourage Collaboration</div>
+                    <div class="aim-desc">Promote teamwork through group projects and collaborative coding sessions.</div>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-title">Enhance Skills</div>
+                    <div class="aim-desc">Organize workshops and training sessions to improve technical skills and knowledge in software development.</div>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-title">Create Projects</div>
+                    <div class="aim-desc">Develop real-world applications and projects that can be showcased in portfolios or competitions.</div>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-title">Networking Opportunities</div>
+                    <div class="aim-desc">Facilitate connections with industry professionals and alumni to enhance career prospects.</div>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-title">Host Events</div>
+                    <div class="aim-desc">Organize hackathons, coding competitions, and guest speaker events to engage members and the wider community.</div>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-title">Promote Innovation</div>
+                    <div class="aim-desc">Encourage members to explore new technologies and creative solutions to problems.</div>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="divider">
+        
+        <!-- Team -->
+        <div class="team">
+            <h4>Meet Our Team</h4>
+            <div class="team-categories">
+                <div class="team-category">
+                    <h5 class="category-title">Faculty Mentors</h5>
+                    <div class="mentors">
+                        <div class="member-card">
+                            <img src="/api/placeholder/120/120" alt="Mentor Profile 1">
+                        </div>
+                        <div class="member-card">
+                            <img src="/api/placeholder/120/120" alt="Mentor Profile 2">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-category">
+                    <h5 class="category-title">Student Members</h5>
+                    <div class="students">
+                        <div class="member-card"><img src="/api/placeholder/120/120" alt="Student Profile"></div>
+                        <div class="member-card"><img src="/api/placeholder/120/120" alt="Student Profile"></div>
+                        <div class="member-card"><img src="/api/placeholder/120/120" alt="Student Profile"></div>
+                        <div class="member-card"><img src="/api/placeholder/120/120" alt="Student Profile"></div>
+                        <div class="member-card"><img src="/api/placeholder/120/120" alt="Student Profile"></div>
+                        <div class="member-card"><img src="/api/placeholder/120/120" alt="Student Profile"></div>
+                        <div class="member-card"><img src="/api/placeholder/120/120" alt="Student Profile"></div>
+                        <div class="member-card"><img src="/api/placeholder/120/120" alt="Student Profile"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <p>© 2024 NST-SDC: All rights reserved</p>
+                <div class="social-icons">
+                    <div class="social-icon">
+                        <img src="/api/placeholder/22/22" alt="GitHub">
+                    </div>
+                    <div class="social-icon">
+                        <img src="/api/placeholder/22/22" alt="Instagram">
+                    </div>
+                    <div class="social-icon">
+                        <img src="/api/placeholder/22/22" alt="Discord">
+                    </div>
+                    <div class="social-icon">
+                        <img src="/api/placeholder/22/22" alt="YouTube">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="about.js"></script>
 </body>
-<script>
-    // Function to update date and time
-function updateDateTime() {
-    const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-    };
-    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
-}
-
-// Initial call to set the date and time
-updateDateTime();
-
-// Update the time every second
-setInterval(updateDateTime, 1000);
-
-</script>
 </html>

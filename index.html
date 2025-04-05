@@ -6,10 +6,20 @@
     <title>NST-SDC Portal</title>
     <link rel="icon" href="/NST_SDC/photos/NST-SDC.png" type="image/jpeg">
     
+
+    <!-- Fonts -->
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Analytics -->
+
 
     <style>
         :root {
@@ -56,6 +66,10 @@
     <div id="particles-js"></div>
 
     <script defer data-domain="nstsdc.org" src="https://plausible.io/js/script.js"></script>
+
+</head>
+<body>
+
     
 
 
@@ -94,6 +108,9 @@
     <div id="particles-js"></div>
 
 
+
+
+
     <div class="container">
         <div class="form-card">
             <div class="header">
@@ -101,90 +118,113 @@
                 <p>Student Development Center Portal</p>
             </div>
             
-            <div class="form-toggle">
-                <button type="button" class="toggle-btn active" id="loginToggle">Log In</button>
-                <button type="button" class="toggle-btn" id="signupToggle">Sign Up</button>
-            </div>
-            
-            <form id="authForm">
-                <!-- Login Form Section -->
-                <div class="form-section active" id="loginForm">
-                    <div class="form-group">
-                        <label for="loginEmail">Email</label>
-                        <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your registered email" required>
-                        <div class="error-message" id="loginEmailError">Please enter a valid email address</div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="loginURN">URN</label>
-                        <input type="text" id="loginURN" name="loginURN" placeholder="Enter your URN" required>
-                        <div class="error-message" id="loginURNError">Please enter your URN</div>
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="button" class="btn login" id="loginButton">Log In</button>
+            <form id="authForm" action="http://localhost:3000/submit" method="post">
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="students">Student</option>
+                        <option value="member">Member</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Batch</label>
+                    <div class="radio-group">
+                        <input type="radio" id="batchA" name="batch" value="A" required>
+                        <label for="batchA">A</label>
+                        
+                        <input type="radio" id="batchB" name="batch" value="B">
+                        <label for="batchB">B</label>
+                        
+                        <input type="radio" id="batchC" name="batch" value="C">
+                        <label for="batchC">C</label>
                     </div>
                 </div>
                 
-                <!-- Signup Form Section -->
-                <div class="form-section" id="signupForm">
-                    <div class="form-group">
-                        <label for="role">Role</label>
-                        <select id="role" name="role" required>
-                            <option value="" disabled selected>Select your role</option>
-                            <option value="students">Student</option>
-                            <option value="member">Member</option>
-                            <option value="admin">Admin</option>
-                        </select>
-                        <div class="error-message" id="roleError">Please select a role</div>
+                <div class="form-group">
+                    <label for="urn">URN</label>
+                    <input type="text" id="urn" name="urn" placeholder="Enter your URN" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <span class="toggle-password" onclick="togglePassword()">👁️</span>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                        <div class="error-message" id="nameError">Please enter your full name</div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Batch</label>
-                        <div class="radio-group">
-                            <input type="radio" id="batchA" name="batch" value="A" required>
-                            <label for="batchA">A</label>
-                            
-                            <input type="radio" id="batchB" name="batch" value="B">
-                            <label for="batchB">B</label>
-                            
-                            <input type="radio" id="batchC" name="batch" value="C">
-                            <label for="batchC">C</label>
-                        </div>
-                        <div class="error-message" id="batchError">Please select a batch</div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="urn">URN</label>
-                        <input type="text" id="urn" name="urn" placeholder="Enter your URN" required>
-                        <div class="error-message" id="urnError">Please enter a valid URN</div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="dob">Date of Birth</label>
-                        <input type="date" id="dob" name="dob" required>
-                        <div class="error-message" id="dobError">Please enter your date of birth</div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="signupEmail">Email</label>
-                        <input type="email" id="signupEmail" name="signupEmail" placeholder="Enter your email" required>
-                        <div class="error-message" id="emailError">Please enter a valid email address</div>
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="button" class="btn signup" id="signupButton">Sign Up</button>
-                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn login" name="action" value="login">Log In</button>
+                    <button type="submit" class="btn signup" name="action" value="signup">Sign Up</button>
+                </div>
+                
+                <div class="form-footer">
+                    <a href="#" class="forgot-password">Forgot password?</a>
                 </div>
             </form>
         </div>
     </div>
+
+
+    <script>
+        // Set minimum date for DOB (16 years old)
+        function setMinDOB() {
+            const dobInput = document.getElementById('dob');
+            const today = new Date();
+            const minDOB = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
+            dobInput.max = minDOB.toISOString().split("T")[0];
+        }
+        
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+        
+        // Form submission
+        document.getElementById('authForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const action = e.submitter.value;
+            if (this.checkValidity()) {
+                // Simple redirect for demo
+                if (action === 'login') {
+                    window.location.href = 'home.html';
+                } else {
+                    window.location.href = 'signup.html';
+                }
+            }
+        });
+        
+        // Initialize on load
+        window.onload = function() {
+            setMinDOB();
+        };
+    </script>
+
+    <!-- Particles.js -->
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
@@ -510,5 +550,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+
+
+
+
 </body>
 </html>

@@ -3,109 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NST-SDC</title>
-    <link rel="stylesheet" href="/event.css">
+    <title>NST-SDC | Events</title>
+    <link rel="stylesheet" href="events.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="body">
-<!-------------header------------>
-<header>
-    <h1>NST-SDC</h1>
-    <h3>Code, Create, Connect!</h3>
-    <div id="date-time"></div>
-</header>
-<hr>
-<div class="nav">
-    <div class="nav-item">
-        <a href="/home.html">Home</a>
-    </div>
-    <div class="nav-item">
-        <a href="/about.html">About</a>
-    </div>
-    <div class="nav-item">
-        <a href="/events.html">Events</a>
-    </div>
-    <div class="nav-item">
-        <a href="/gallery.html">Gallery</a>
-    </div>
-    <div class="nav-item">
-        <a href="/contact.html">Contact</a>
-    </div>
-</div>
-<!-------------/header/------------>
-<hr>
-<!-- upcoming events -->
-<div class="upevent">
-    <h2><u>Upcoming Events</u></h2>
-    <div class="upevent-item">
-        <img src="/photos/event1.jpeg">
-        <h3>Event 1</h3>
-    </div>
-    <div class="upevent-item">
-        <img src="/photos/event2.jpeg">
-        <h3>Event 2</h3>
-    </div>
-    <div class="upevent-item">
-        <img src="/photos/event3.jpeg">
-        <h3>Event 3</h3>
-    </div>
-</div>
-<!--/upcoming events -->
-<!-- pastevents -->
-<div class="pastevent">
-    <h2><u>Past Events</u></h2>
-    <div class="paevent">
-        <img src="/photos/event1.jpeg">
-        <h3>Event 1</h3>
-    </div>
-    <div class="paevent">
-        <img src="/photos/event2.jpeg">
-        <h3>Event 2</h3>
-    </div>
-    <div class="paevent">
-        <img src="/photos/event3.jpeg">
-        <h3>Event 3</h3>
-    </div>
-</div>
-<!--/pastevents -->
-<!--footer -->
-<div class="footer">
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 NST-SDC: All rights reserved</p>
-            <div class="social-icons">
-                <img src="/photos/github.png" alt="GitHub" class="img">
-                <img src="/photos/instagram.png" alt="Instagram" class="img">
-                <img src="/photos/discord.png" alt="Discord" class="img">
-                <img src="/photos/youtube.png" alt="YouTube" class="img">
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo-container">
+                <h1 class="logo-text">NST-SDC</h1>
+                <h3 class="tagline">Code, Create, Connect!</h3>
             </div>
-        </div>
-    </footer>
-</div>
-<!--/footer -->
-</div>
+            <div id="date-time" class="date-time"></div>
+        </header>
+        
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <div class="nav-item"><a href="/home.html">Home</a></div>
+            <div class="nav-item"><a href="/about.html">About</a></div>
+            <div class="nav-item"><a href="/events.html" class="active">Events</a></div>
+            <div class="nav-item"><a href="/gallery.html">Gallery</a></div>
+            <div class="nav-item"><a href="/contact.html">Contact</a></div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main>
+            <!-- Upcoming Events Section -->
+            <section class="events-section upcoming-events">
+                <h2 class="section-title">Upcoming Events</h2>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="/photos/event1.jpeg" alt="Event 1">
+                            <div class="event-overlay">
+                                <div class="event-date">APR 15</div>
+                                <button class="register-btn">Register Now</button>
+                            </div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Event 1</h3>
+                            <p class="event-description">Join us for an exciting tech workshop focusing on web development fundamentals.</p>
+                            <div class="event-meta">
+                                <span><i class="icon-calendar"></i> April 15, 2025</span>
+                                <span><i class="icon-location"></i> Main Campus</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="/photos/event2.jpeg" alt="Event 2">
+                            <div class="event-overlay">
+                                <div class="event-date">APR 22</div>
+                                <button class="register-btn">Register Now</button>
+                            </div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Event 2</h3>
+                            <p class="event-description">Hackathon featuring AI/ML challenges with industry mentors and exciting prizes.</p>
+                            <div class="event-meta">
+                                <span><i class="icon-calendar"></i> April 22, 2025</span>
+                                <span><i class="icon-location"></i> Tech Hub</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="/photos/event3.jpeg" alt="Event 3">
+                            <div class="event-overlay">
+                                <div class="event-date">MAY 05</div>
+                                <button class="register-btn">Register Now</button>
+                            </div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Event 3</h3>
+                            <p class="event-description">Networking session with tech professionals from leading companies in the industry.</p>
+                            <div class="event-meta">
+                                <span><i class="icon-calendar"></i> May 5, 2025</span>
+                                <span><i class="icon-location"></i> Innovation Center</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Past Events Section -->
+            <section class="events-section past-events">
+                <h2 class="section-title">Past Events</h2>
+                <div class="events-grid">
+                    <div class="event-card past">
+                        <div class="event-image">
+                            <img src="/photos/event1.jpeg" alt="Past Event 1">
+                            <div class="event-overlay">
+                                <div class="event-tag">Completed</div>
+                                <button class="gallery-btn">View Gallery</button>
+                            </div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Past Event 1</h3>
+                            <p class="event-description">Introduction to Blockchain Technology workshop with hands-on exercises.</p>
+                            <div class="event-meta">
+                                <span><i class="icon-calendar"></i> March 10, 2025</span>
+                                <span><i class="icon-attendees"></i> 85 Attendees</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card past">
+                        <div class="event-image">
+                            <img src="/photos/event2.jpeg" alt="Past Event 2">
+                            <div class="event-overlay">
+                                <div class="event-tag">Completed</div>
+                                <button class="gallery-btn">View Gallery</button>
+                            </div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Past Event 2</h3>
+                            <p class="event-description">Mobile App Development masterclass with Flutter and React Native.</p>
+                            <div class="event-meta">
+                                <span><i class="icon-calendar"></i> February 25, 2025</span>
+                                <span><i class="icon-attendees"></i> 72 Attendees</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card past">
+                        <div class="event-image">
+                            <img src="/photos/event3.jpeg" alt="Past Event 3">
+                            <div class="event-overlay">
+                                <div class="event-tag">Completed</div>
+                                <button class="gallery-btn">View Gallery</button>
+                            </div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Past Event 3</h3>
+                            <p class="event-description">Cybersecurity seminar featuring expert speakers and live demonstrations.</p>
+                            <div class="event-meta">
+                                <span><i class="icon-calendar"></i> January 18, 2025</span>
+                                <span><i class="icon-attendees"></i> 95 Attendees</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-content">
+                <p>© 2025 NST-SDC: All rights reserved</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="GitHub"><img src="/photos/github.png" alt="GitHub"></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><img src="/photos/instagram.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon" aria-label="Discord"><img src="/photos/discord.png" alt="Discord"></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><img src="/photos/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00bcd4"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00bcd4",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        
+        // Function to update date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        // Initial call to set the date and time
+        updateDateTime();
+        
+        // Update the time every second
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
-<script>
-    // Function to update date and time
-function updateDateTime() {
-    const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-    };
-    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
-}
-
-// Initial call to set the date and time
-updateDateTime();
-
-// Update the time every second
-setInterval(updateDateTime, 1000);
-
-</script>
 </html>
