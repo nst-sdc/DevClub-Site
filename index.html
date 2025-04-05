@@ -6,13 +6,17 @@
     <title>NST-SDC Portal</title>
     <link rel="icon" href="/NST_SDC/photos/NST-SDC.png" type="image/jpeg">
     
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-
     <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <!-- Particles container -->
+    <div id="particles-js"></div>
+
     
 
     <script defer data-domain="nstsdc.org" src="https://plausible.io/js/script.js"></script>
@@ -23,6 +27,7 @@
 
     <!-- Particles.js container -->
     <div id="particles-js"></div>
+ main
     <div class="container">
         <div class="form-card">
             <div class="header">
@@ -115,8 +120,100 @@
         </div>
     </div>
 
-    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#00bcd4"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#00bcd4",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 3,
+                        "direction": "none",
+                        "out_mode": "out"
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                }
+            });
+
+            // Set minimum date for DOB
+            const dobInput = document.getElementById('dob');
+            const today = new Date();
+            const minDOB = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
+            dobInput.max = minDOB.toISOString().split("T")[0];
+
+            // Form toggle functionality
+            document.getElementById('loginToggle').addEventListener('click', function() {
+                document.getElementById('loginForm').classList.add('active');
+                document.getElementById('signupForm').classList.remove('active');
+                this.classList.add('active');
+                document.getElementById('signupToggle').classList.remove('active');
+            });
+            
+            document.getElementById('signupToggle').addEventListener('click', function() {
+                document.getElementById('signupForm').classList.add('active');
+                document.getElementById('loginForm').classList.remove('active');
+                this.classList.add('active');
+                document.getElementById('loginToggle').classList.remove('active');
+            });
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
