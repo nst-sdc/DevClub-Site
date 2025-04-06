@@ -3,9 +3,9 @@
     --primary-color: #00bcd4;
     --secondary-color: #6c63ff;
     --accent-color: #4dd4ac;
-    --dark-color: #0a192f;
+    --dark-color: #121212;
     --dark-card: #1e2937;
-    --dark-text: #f9fafb;
+    --dark-text: #ffffff;
     --dark-text-light: #9ca3af;
     --light-color: #f5f7fa;
     --light-card: #ffffff;
@@ -45,7 +45,9 @@ a {
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
+    will-change: transform;
 }
 
 /* Particles Background */
@@ -59,7 +61,7 @@ img {
     opacity: 0.6;
     pointer-events: none;
     background-color: var(--dark-color);
-    transition: var(--transition);
+    will-change: transform;
 }
 
 body.light-theme #particles-js {
@@ -78,31 +80,62 @@ body.light-theme #particles-js {
 }
 
 .theme-label {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background: #ddd;
+    border-radius: 30px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    width: 50px;
-    height: 26px;
-    background-color: #111;
-    border-radius: 100px;
-    position: relative;
+    justify-content: flex-start;
     padding: 5px;
-    transition: var(--transition);
+    transition: background 0.3s ease-in-out;
 }
 
 body.light-theme .theme-label {
-    background-color: #e0e0e0;
+    background: #ddd;
 }
 
-.theme-label .fa-sun {
-    color: #f39c12;
-    font-size: 14px;
+body.light-theme .theme-label::before {
+    content: "🌞";
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out, transform 0.3s ease-in-out, content 0.3s ease-in-out;
 }
 
-.theme-label .fa-moon {
-    color: #f1c40f;
-    font-size: 14px;
+body.dark-theme .theme-label {
+    background: #444;
+}
+
+body.dark-theme .theme-label::before {
+    content: "🌙";
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    transform: translateY(-50%) rotate(360deg);
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out, transform 0.3s ease-in-out, content 0.3s ease-in-out;
+    color: white;
 }
 
 .theme-ball {
@@ -194,7 +227,7 @@ header {
     top: 0;
     z-index: 100;
     width: 100%;
-    transition: var(--transition);
+    will-change: transform;
 }
 
 body.light-theme header {
@@ -380,6 +413,7 @@ body.light-theme .hero-text p {
     overflow: hidden;
     border-radius: 12px;
     box-shadow: var(--shadow);
+    will-change: transform;
 }
 
 body.light-theme .carousel-container {
@@ -388,8 +422,9 @@ body.light-theme .carousel-container {
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
     width: 300%;
+    will-change: transform;
 }
 
 .carousel-slide {
@@ -494,10 +529,11 @@ body.light-theme .section-title {
 .feature-card {
     background-color: var(--dark-card);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    transition: var(--transition);
+    transition: transform 0.2s ease;
     text-align: center;
+    will-change: transform;
 }
 
 body.light-theme .feature-card {
@@ -506,7 +542,7 @@ body.light-theme .feature-card {
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -578,11 +614,12 @@ body.light-theme .events-section {
     min-width: calc(50% - 1rem);
     margin-right: 1rem;
     background-color: var(--dark-card);
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: var(--transition);
+    transition: transform 0.2s ease;
     flex-shrink: 0;
+    will-change: transform;
 }
 
 body.light-theme .event-card {
@@ -755,13 +792,14 @@ body.light-theme .news-section {
 
 .news-card {
     padding: 1.5rem;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    transition: var(--transition);
+    transition: transform 0.2s ease;
     background-color: var(--dark-card);
     height: 100%;
     display: flex;
     flex-direction: column;
+    will-change: transform;
 }
 
 body.light-theme .news-card {
@@ -1025,6 +1063,10 @@ body.light-theme .social-icon {
 }
 
 @media (max-width: 768px) {
+    .welcome-splash {
+        display: flex;
+    }
+    
     .logo-animation {
         font-size: 2.8rem;
     }
@@ -1074,6 +1116,14 @@ body.light-theme .social-icon {
     .social-icons {
         justify-content: center;
     }
+    
+    #particles-js {
+        display: none;
+    }
+    
+    .main-content {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1110,6 +1160,43 @@ body.light-theme .social-icon {
     }
 }
 
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+}
+
 /* Fix for FontAwesome */
 .fas, .fab {
     font-family: "Font Awesome 5 Free";
@@ -1118,11 +1205,4 @@ body.light-theme .social-icon {
 
 .fab {
     font-family: "Font Awesome 5 Brands";
-}
-
-/* Ensure particles interactive experience */
-@media (max-width: 768px) {
-    #particles-js {
-        opacity: 0.4;
-    }
 }

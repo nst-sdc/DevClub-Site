@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NST-SDC - Achievements</title>
     <link rel="stylesheet" href="achievements.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -17,7 +20,10 @@
                 <h1>NST-SDC</h1>
                 <p>Code, Create, Connect!</p>
             </div>
-            <div id="date-time">Saturday, April 5, 2025 at 06:53:37 PM</div>
+            <div class="header-right">
+                <div id="date-time" class="date-time"></div>
+                
+            </div>
         </header>
 
         <!-- Navigation -->
@@ -164,18 +170,97 @@
 
         <!-- Footer -->
         <footer>
-            <p>© 2025 NST-SDC: All rights reserved</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+            <div class="footer-content">
+                <p>© 2025 NST-SDC: All rights reserved</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="GitHub"><img src="/photos/github.png" alt="GitHub"></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><img src="/photos/instagram.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon" aria-label="Discord"><img src="/photos/discord.png" alt="Discord"></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><img src="/photos/youtube.png" alt="YouTube"></a>
+                </div>
             </div>
         </footer>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="achievements.js"></script>
+    <script src="theme.js"></script>
+    <script>
+        // Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00bcd4"
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00bcd4",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
