@@ -1,12 +1,20 @@
 /* ===== GLOBAL STYLES ===== */
 :root {
-    --primary-color: #00e5ff;
-    --primary-dark: #00b8d4;
-    --background-color: #121212;
-    --card-background: #1e1e1e;
-    --text-primary: #ffffff;
-    --text-secondary: #b3b3b3;
-    --accent-hover: #00e5ff33;
+    --primary-color: #00bcd4;
+    --secondary-color: #6c63ff;
+    --accent-color: #4dd4ac;
+    --dark-color: #121212;
+    --dark-card: #1e2937;
+    --dark-text: #ffffff;
+    --dark-text-light: #9ca3af;
+    --light-color: #f5f7fa;
+    --light-card: #ffffff;
+    --light-text: #1f2937;
+    --light-text-light: #4b5563;
+    --transition: all 0.3s ease;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --light-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
 }
 
 * {
@@ -15,6 +23,22 @@
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
 }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text);
+    background-color: var(--dark-color);
+    overflow-x: hidden;
+    line-height: 1.6;
+    position: relative;
+    transition: var(--transition);
+}
+
+body.light-theme {
+    color: var(--light-text);
+    background-color: var(--light-color);
+}
+
 .footer-content {
     display: flex;
     flex-direction: column;
@@ -26,6 +50,7 @@
     margin-bottom: 15px;
     color: #a0a0a0;
 }
+
 .social-icons {
     display: flex;
     gap: 20px;
@@ -54,14 +79,6 @@
     width: 20px;
     height: 20px;
     object-fit: contain;
-}
-
-body {
-    background-color: var(--background-color);
-    color: var(--text-primary);
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
 }
 
 .container {
@@ -155,6 +172,24 @@ header {
 
 .nav-item a.active:before {
     width: 70%;
+}
+
+/* Light Theme Navigation Styles */
+body.light-theme .nav-bar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .nav-item a {
+    color: #333333;
+}
+
+body.light-theme .nav-item a:hover {
+    color: #00bcd4;
+}
+
+body.light-theme .nav-item a.active {
+    color: #00bcd4;
+    background-color: rgba(0, 188, 212, 0.1);
 }
 
 /* ===== MAIN CONTENT STYLES ===== */
@@ -332,4 +367,109 @@ footer {
         flex-direction: column;
         gap: 5px;
     }
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: relative;
+    margin-left: 20px;
+}
+
+.theme-switch {
+    opacity: 0;
+    position: absolute;
+}
+
+.theme-label {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background: #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+body.light-theme .theme-label {
+    background: #ddd;
+}
+
+body.light-theme .theme-label::before {
+    content: "🌞";
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out, transform 0.3s ease-in-out, content 0.3s ease-in-out;
+}
+
+body.dark-theme .theme-label {
+    background: #444;
+}
+
+body.dark-theme .theme-label::before {
+    content: "🌙";
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    transform: translateY(-50%) rotate(360deg);
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out, transform 0.3s ease-in-out, content 0.3s ease-in-out;
+    color: white;
+}
+
+/* Theme-specific styles */
+body.light-theme .achievement-card {
+    background-color: var(--light-card);
+    box-shadow: var(--light-shadow);
+}
+
+body.light-theme .achievement-content h3 {
+    color: var(--light-text);
+}
+
+body.light-theme .achievement-meta {
+    color: var(--light-text-light);
+}
+
+body.light-theme .achievement-content p {
+    color: var(--light-text);
+}
+
+body.dark-theme .achievement-card {
+    background-color: var(--dark-card);
+    box-shadow: var(--shadow);
+}
+
+body.dark-theme .achievement-content h3 {
+    color: var(--dark-text);
+}
+
+body.dark-theme .achievement-meta {
+    color: var(--dark-text-light);
+}
+
+body.dark-theme .achievement-content p {
+    color: var(--dark-text);
 }
