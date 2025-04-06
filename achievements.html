@@ -3,124 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NST-SDC</title>
-    <link rel="stylesheet" href="/event.css">
+    <title>NST-SDC - Achievements</title>
+    <link rel="stylesheet" href="achievements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<div class="body">
-<!-------------header------------>
-<header>
-    <h1>NST-SDC</h1>
-    <h3>Code, Create, Connect!</h3>
-    <div id="date-time"></div>
-</header>
-<hr>
-<div class="nav">
-    <div class="nav-item">
-        <a href="/home.html">Home</a>
-    </div>
-    <div class="nav-item">
-        <a href="/about.html">About</a>
-    </div>
-    <div class="nav-item">
-        <a href="/events.html">Events</a>
-    </div>
-    <div class="nav-item">
-        <a href="/gallery.html">Gallery</a>
-    </div>
-    <div class="nav-item">
-        <a href="/contact.html">Contact</a>
-    </div>
-    <div class="nav-item">
-        <a href="/achievements.html">Achievements</a>
-    </div>
-
-</div>
-<!-------------/header/------------>
-<hr>
-<!-- latest achievements -->
-<h2 style="text-align: center; font-size: 30px;"> Latest Achievements</h2>
-<div class="lateachieve-item" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 13px;">
-    <div style="width: 300px;">
-        <img src="/photos/event1.jpeg" style="width: 300px; height: 300px; border-radius: 15px;">
-    </div>
-    <div style="flex-grow: 1; padding-left: 20px;">
-        <h3>Project Name</h3>
-        <p style="font-size: 22px; font-style: italic;">This is the paragraph describing the project. You can provide more details about the project here, including information about the team, tasks, or outcomes. The paragraph will take up the remaining space on the right of the image and expand to fit the available width, ensuring a flexible and responsive layout.</p>
-    </div>
-</div>
-<div class="lateachieve-item" style="display: flex; align-items: flex-start; justify-content: space-between;margin-bottom: 13px;">
-    <div style="width: 300px;">
-        <img src="/photos/event2.jpeg" style="width: 300px; height: 300px; border-radius: 15px;">
-    </div>
-    <div style="flex-grow: 1; padding-left: 20px;">
-        <h3>Project Name</h3>
-        <p style="font-size: 22px; font-style: italic;">This is the paragraph describing the event. You can provide more details about the event here, including information about the speakers, activities, or outcomes. The paragraph will take up the remaining space on the right of the image and expand to fit the available width, ensuring a flexible and responsive layout.</p>
-    </div>
-</div>
-<!--/latest achievements -->
-
-
-<!--other achievements -->
-<h2 style="text-align: center;font-size: 30px"> Other Achievements</h2>
-<div class="otherachieve-item" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 13px;">
-    <div style="width: 300px;">
-        <img src="/photos/event1.jpeg" style="width: 300px; height: 300px; border-radius: 15px;">
-    </div>
-    <div style="flex-grow: 1; padding-left: 20px;">
-        <h3>Project Name</h3>
-        <p style="font-size: 22px; font-style: italic;">This is the paragraph describing the event. You can provide more details about the event here, including information about the speakers, activities, or outcomes. The paragraph will take up the remaining space on the right of the image and expand to fit the available width, ensuring a flexible and responsive layout.</p>
-    </div>
-</div>
-<div class="lateachieve-item" style="display: flex; align-items: flex-start; justify-content: space-between;margin-bottom: 13px;">
-    <div style="width: 300px;">
-        <img src="/photos/event3.jpeg" style="width: 300px; height: 300px; border-radius: 15px;">
-    </div>
-    <div style="flex-grow: 1; padding-left: 20px;">
-        <h3>Project Name</h3>
-        <p style="font-size: 22px; font-style: italic;">This is the paragraph describing the event. You can provide more details about the event here, including information about the speakers, activities, or outcomes. The paragraph will take up the remaining space on the right of the image and expand to fit the available width, ensuring a flexible and responsive layout.</p>
-    </div>
-</div>
-<!--/other achievements -->
-<!--footer -->
-<div class="footer">
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 NST-SDC: All rights reserved</p>
-            <div class="social-icons">
-                <img src="/photos/github.png" alt="GitHub" class="img">
-                <img src="/photos/instagram.png" alt="Instagram" class="img">
-                <img src="/photos/discord.png" alt="Discord" class="img">
-                <img src="/photos/youtube.png" alt="YouTube" class="img">
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <h1>NST-SDC</h1>
+                <p>Code, Create, Connect!</p>
             </div>
-        </div>
-    </footer>
-</div>
-<!--/footer -->
-</div>
+            <div id="date-time">Saturday, April 5, 2025 at 06:53:37 PM</div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <div class="nav-item">
+                <a href="home.html">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="events.html">Events</a>
+            </div>
+            <div class="nav-item">
+                <a href="gallery.html">Gallery</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-item">
+                <a href="achievements.html" class="active">Achievements</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <div class="section-header">
+                <h2>Our Achievements</h2>
+            </div>
+            
+            <div class="achievements-grid">
+                <!-- Achievement Card 1 -->
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="/api/placeholder/500/300" alt="National Hackathon Winner">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>National Hackathon Winners</h3>
+                        <div class="achievement-meta">
+                            <span><i class="far fa-calendar-alt"></i> March 2025</span>
+                            <span><i class="fas fa-trophy"></i> First Place</span>
+                        </div>
+                        <p>Our team won first place at the National Collegiate Hackathon with an innovative AI-driven solution for sustainable urban planning. The project was praised for its technical excellence and real-world applicability.</p>
+                    </div>
+                </div>
+                
+                <!-- Achievement Card 2 -->
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="/api/placeholder/500/300" alt="Research Publication">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Research Publication</h3>
+                        <div class="achievement-meta">
+                            <span><i class="far fa-calendar-alt"></i> February 2025</span>
+                            <span><i class="fas fa-book"></i> IEEE Conference</span>
+                        </div>
+                        <p>Members of our club published a research paper on "Optimizing Neural Networks for Edge Computing" at the IEEE International Conference on Advanced Computing, receiving recognition from industry leaders.</p>
+                    </div>
+                </div>
+                
+                <!-- Achievement Card 3 -->
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="/api/placeholder/500/300" alt="Community Outreach">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Community Tech Workshop Series</h3>
+                        <div class="achievement-meta">
+                            <span><i class="far fa-calendar-alt"></i> January 2025</span>
+                            <span><i class="fas fa-users"></i> 500+ Participants</span>
+                        </div>
+                        <p>Successfully organized a series of technology workshops for underprivileged schools, reaching over 500 students and introducing them to programming, robotics, and digital literacy.</p>
+                    </div>
+                </div>
+                
+                <!-- Achievement Card 4 -->
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="/api/placeholder/500/300" alt="Startup Incubation">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Startup Incubation Success</h3>
+                        <div class="achievement-meta">
+                            <span><i class="far fa-calendar-alt"></i> December 2024</span>
+                            <span><i class="fas fa-rocket"></i> $200K Funding</span>
+                        </div>
+                        <p>Our club's alumni startup "CodeSync" received 20,00,000 in seed funding. The project began as a club initiative and has grown into a promising venture focused on collaborative coding platforms.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-header">
+                <h2>Individual Recognition</h2>
+            </div>
+            
+            <div class="achievements-grid three-column">
+                <!-- Individual Achievement 1 -->
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="/api/placeholder/350/200" alt="Coding Competition Winner">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>International Coding Olympiad</h3>
+                        <div class="achievement-meta">
+                            <span>Member 1</span>
+                            <span>Silver Medal</span>
+                        </div>
+                        <p>Represented our university at the International Coding Olympiad and secured a silver medal in the algorithm optimization category.</p>
+                    </div>
+                </div>
+                
+                <!-- Individual Achievement 2 -->
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="/api/placeholder/350/200" alt="Google Fellowship">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Google PhD Fellowship</h3>
+                        <div class="achievement-meta">
+                            <span>Member 2</span>
+                            <span>2025 Recipient</span>
+                        </div>
+                        <p>Awarded the prestigious Google PhD Fellowship for research on quantum machine learning algorithms and their applications in healthcare.</p>
+                    </div>
+                </div>
+                
+                <!-- Individual Achievement 3 -->
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="/api/placeholder/350/200" alt="Open Source Contribution">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Major Open Source Contribution</h3>
+                        <div class="achievement-meta">
+                            <span>Member 3</span>
+                            <span>Core Contributor</span>
+                        </div>
+                        <p>Became a core contributor to TensorFlow by developing an innovative optimization algorithm that improves training speed by 30%.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 NST-SDC: All rights reserved</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="achievements.js"></script>
 </body>
-<script>
-    // Function to update date and time
-function updateDateTime() {
-    const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-    };
-    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
-}
-
-// Initial call to set the date and time
-updateDateTime();
-
-// Update the time every second
-setInterval(updateDateTime, 1000);
-
-</script>
 </html>
-
