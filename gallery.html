@@ -3,76 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NST-SDC</title>
-    <link rel="stylesheet" href="/home.css">
+    <title>NST-SDC Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-<div class="body">
-<!-------------header------------>
-<header>
-    <h1>NST-SDC</h1>
-    <h3>Code, Create, Connect!</h3>
-    <div id="date-time"></div>
-</header>
-<hr>
-<div class="nav">
-    <div class="nav-item">
-        <a href="/home.html">Home</a>
-    </div>
-    <div class="nav-item">
-        <a href="/about.html">About</a>
-    </div>
-    <div class="nav-item">
-        <a href="/events.html">Events</a>
-    </div>
-    <div class="nav-item">
-        <a href="/gallery.html">Gallery</a>
-    </div>
-    <div class="nav-item">
-        <a href="/contact.html">Contact</a>
-    </div>
-</div>
-<!-------------/header/------------>
-<hr>
-
-<hr>
-<!-- footer -->
-<div class="footer">
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 NST-SDC: All rights reserved</p>
-            <div class="social-icons">
-                <img src="/photos/github.png" alt="GitHub" class="img">
-                <img src="/photos/instagram.png" alt="Instagram" class="img">
-                <img src="/photos/discord.png" alt="Discord" class="img">
-                <img src="/photos/youtube.png" alt="YouTube" class="img">
+    <div class="main-content">
+        <!-------------header------------>
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>NST-SDC</h1>
+                    <div class="tagline">Code, Create, Connect!</div>
+                </div>
+                <div id="date-time"></div>
+            </div>
+        </header>
+        
+        <div class="nav">
+            <div class="nav-item">
+                <a href="home.html">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="events.html">Events</a>
+            </div>
+            <div class="nav-item active">
+                <a href="gallery.html">Gallery</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html">Contact</a>
             </div>
         </div>
-    </footer>
-</div>
-<!-- /footer -->
-</div>
+        <!-------------/header/------------>
+
+        <section class="gallery-section">
+            <div class="gallery-header">
+                <h2 class="section-title">Our Gallery</h2>
+                <p>Explore our journey through these memorable moments</p>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="workshops">Workshops</button>
+                <button class="filter-btn" data-filter="projects">Projects</button>
+                <button class="filter-btn" data-filter="team">Team</button>
+            </div>
+
+            <div class="masonry-grid">
+                <!-- Event Images -->
+                <div class="gallery-item" data-category="events">
+                    <img src="photos/event1.jpeg" alt="Event 1">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Web Development Workshop</h3>
+                        <p class="item-date">March 15, 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="photos/event2.jpeg" alt="Event 2">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Hackathon 2024</h3>
+                        <p class="item-date">February 28, 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="photos/event3.jpeg" alt="Event 3">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Tech Talk Series</h3>
+                        <p class="item-date">January 20, 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="photos/event4.jpeg" alt="Event 4">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Code Maverick</h3>
+                        <p class="item-date">March 2024</p>
+                    </div>
+                </div>
+
+                <!-- Workshop Images -->
+                <div class="gallery-item" data-category="workshops">
+                    <img src="photos/heroimg1.jpeg" alt="Workshop 1">
+                    <div class="item-overlay">
+                        <h3 class="item-title">React Workshop</h3>
+                        <p class="item-date">March 10, 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="workshops">
+                    <img src="photos/heroimg2.jpeg" alt="Workshop 2">
+                    <div class="item-overlay">
+                        <h3 class="item-title">UI/UX Design</h3>
+                        <p class="item-date">February 15, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Project Images -->
+                <div class="gallery-item" data-category="projects">
+                    <img src="photos/heroimg3.jpeg" alt="Project 1">
+                    <div class="item-overlay">
+                        <h3 class="item-title">E-Learning Platform</h3>
+                        <p class="item-date">December 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="projects">
+                    <img src="photos/codemaverick.jpeg" alt="Project 2">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Smart Campus App</h3>
+                        <p class="item-date">November 2023</p>
+                    </div>
+                </div>
+
+                <!-- Team Images -->
+                <div class="gallery-item" data-category="team">
+                    <img src="photos/profile.jpeg" alt="Team 1">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Core Team 2024</h3>
+                        <p class="item-date">January 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <div class="lightbox-content">
+                <img src="" alt="">
+            </div>
+            <div class="lightbox-nav">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">NST-SDC</div>
+                    <p>Empowering students with the skills and knowledge needed to excel in the tech industry.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="GitHub">
+                            <img src="photos/github.png" alt="GitHub">
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <img src="photos/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Discord">
+                            <img src="photos/discord.png" alt="Discord">
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <img src="photos/youtube.png" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> NST Campus, Innovation Hub</li>
+                            <li><i class="fas fa-envelope"></i> contact@nstsdc.org</li>
+                            <li><i class="fas fa-phone"></i> +91 1234567890</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Function to update date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            };
+            document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        // Initial call to set the date and time
+        updateDateTime();
+
+        // Update the time every second
+        setInterval(updateDateTime, 1000);
+
+        // Gallery Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-content img');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+        let currentImageIndex = 0;
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex].src;
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex].src;
+        });
+
+        // Close lightbox when clicking outside
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                } else if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                }
+            }
+        });
+    </script>
 </body>
-<script>
-    // Function to update date and time
-function updateDateTime() {
-    const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-    };
-    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
-}
-
-// Initial call to set the date and time
-updateDateTime();
-
-// Update the time every second
-setInterval(updateDateTime, 1000);
-</script>
 </html>
