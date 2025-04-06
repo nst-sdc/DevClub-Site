@@ -1,560 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NST-SDC Portal</title>
-    <link rel="icon" href="/NST_SDC/photos/NST-SDC.png" type="image/jpeg">
-    
-
-    <!-- Fonts -->
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-    
-
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="index.css">
-    
-    <!-- Analytics -->
-
-
-
-    <style>
-        :root {
-            --primary: #00bcd4;
-            --primary-light: #33c9dc;
-            --primary-dark: #008fa1;
-            --background: #121212;
-            --card-bg: rgba(25, 28, 32, 0.86);
-            --text: #f5f5f5;
-            --text-secondary: #c0c0c0;
-            --border: #444;
-            --error: #ff5555;
-            --success: #4CAF50;
-            --input-bg: rgba(30, 35, 40, 0.7);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text);
-            background-color: var(--background);
-            min-height: 100vh;
-            padding: 0;
-            margin: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-    <link rel="stylesheet" href="index.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NST-SDC Portal</title>
+  <link rel="icon" href="/NST_SDC/photos/NST-SDC.png" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- Particles container -->
-    <div id="particles-js"></div>
+  <div id="particles-js"></div>
 
-    <script defer data-domain="nstsdc.org" src="https://plausible.io/js/script.js"></script>
+  <div class="container">
+    <div class="form-card">
+      <div class="header">
+        <h1>NST-SDC</h1>
+        <p>Student Development Center Portal</p>
+      </div>
 
-</head>
-<body>
+      <form id="authForm" action="http://localhost:3000/submit" method="post">
+        <div id="fullDetails" style="display: none;">
+          <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" name="role">
+              <option value="" disabled selected>Select your role</option>
+              <option value="students">Student</option>
+              <option value="member">Member</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
 
-    
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name">
+          </div>
 
-
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background-color: var(--background);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-        }
-
-
-
-    </style>
-</head>
-<body>
-   
-    <div id="particles-js"></div>
-
-
-    <!-- Particles.js container -->
-    <div id="particles-js"></div>
-
-
-
-    <div class="container">
-        <div class="form-card">
-            <div class="header">
-                <h1>NST-SDC</h1>
-                <p>Student Development Center Portal</p>
+          <div class="form-group">
+            <label>Batch</label>
+            <div class="radio-group">
+              <input type="radio" id="batchA" name="batch" value="A">
+              <label for="batchA">A</label>
+              <input type="radio" id="batchB" name="batch" value="B">
+              <label for="batchB">B</label>
+              <input type="radio" id="batchC" name="batch" value="C">
+              <label for="batchC">C</label>
             </div>
-            
-            <form id="authForm" action="http://localhost:3000/submit" method="post">
-                <div class="form-group">
-                    <label for="role">Role</label>
-                    <select id="role" name="role" required>
-                        <option value="" disabled selected>Select your role</option>
-                        <option value="students">Student</option>
-                        <option value="member">Member</option>
-                        <option value="admin">Admin</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Batch</label>
-                    <div class="radio-group">
-                        <input type="radio" id="batchA" name="batch" value="A" required>
-                        <label for="batchA">A</label>
-                        
-                        <input type="radio" id="batchB" name="batch" value="B">
-                        <label for="batchB">B</label>
-                        
-                        <input type="radio" id="batchC" name="batch" value="C">
-                        <label for="batchC">C</label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="urn">URN</label>
-                    <input type="text" id="urn" name="urn" placeholder="Enter your URN" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" id="dob" name="dob" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                        <span class="toggle-password" onclick="togglePassword()">👁️</span>
-                    </div>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="btn login" name="action" value="login">Log In</button>
-                    <button type="submit" class="btn signup" name="action" value="signup">Sign Up</button>
-                </div>
-                
-                <div class="form-footer">
-                    <a href="#" class="forgot-password">Forgot password?</a>
-                </div>
-            </form>
+          </div>
+
+          <div class="form-group">
+            <label for="urn">URN</label>
+            <input type="text" id="urn" name="urn" placeholder="Enter your URN">
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+          </div>
         </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <span class="toggle-password" onclick="togglePassword()"></span>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn login" name="action" value="login">Log In</button>
+          <button type="button" class="btn signup" onclick="showSignupForm()">Sign Up</button>
+        </div>
+
+        <div class="form-footer">
+         
+        </div>
+      </form>
     </div>
+  </div>
 
+  <script>
+    function setMinDOB() {
+      const dobInput = document.getElementById('dob');
+      const today = new Date();
+      const minDOB = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
+      dobInput.max = minDOB.toISOString().split("T")[0];
+    }
 
-    <script>
-        // Set minimum date for DOB (16 years old)
-        function setMinDOB() {
-            const dobInput = document.getElementById('dob');
-            const today = new Date();
-            const minDOB = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
-            dobInput.max = minDOB.toISOString().split("T")[0];
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+    }
+
+    function showSignupForm() {
+      document.getElementById('fullDetails').style.display = 'block';
+      document.getElementById('role').required = true;
+      document.getElementById('name').required = true;
+      document.getElementById('urn').required = true;
+      document.getElementById('dob').required = true;
+        
+      // Disable login button to avoid accidental login during sign up
+      document.querySelector('.login').style.display = 'none';
+      document.querySelector('.signup').type = 'submit';
+      document.querySelector('.signup').setAttribute('name', 'action');
+      document.querySelector('.signup').setAttribute('value', 'signup');
+    }
+
+    document.getElementById('authForm').addEventListener('submit', function(e) {
+      const action = e.submitter.value;
+      if (!this.checkValidity()) {
+        e.preventDefault();
+      } else {
+        if (action === 'login') {
+          window.location.href = 'home.html';
+        } else if (action === 'signup') {
+          window.location.href = 'signup.html';
         }
-        
-        // Toggle password visibility
-        function togglePassword() {
-            const passwordInput = document.getElementById('password');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-            } else {
-                passwordInput.type = 'password';
-            }
-        }
-        
-        // Form submission
-        document.getElementById('authForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const action = e.submitter.value;
-            if (this.checkValidity()) {
-                // Simple redirect for demo
-                if (action === 'login') {
-                    window.location.href = 'home.html';
-                } else {
-                    window.location.href = 'signup.html';
-                }
-            }
-        });
-        
-        // Initialize on load
-        window.onload = function() {
-            setMinDOB();
-        };
-    </script>
-
-    <!-- Particles.js -->
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Initialize particles when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            particlesJS('particles-js', {
-                "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#00bcd4"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": false
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#00bcd4",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 3,
-                        "direction": "none",
-                        "out_mode": "out"
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 140,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        }
-                    }
-                }
-            });
-
-            // Set minimum date for DOB
-            const dobInput = document.getElementById('dob');
-            const today = new Date();
-            const minDOB = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
-            dobInput.max = minDOB.toISOString().split("T")[0];
-
-            // Form toggle functionality
-            document.getElementById('loginToggle').addEventListener('click', function() {
-                document.getElementById('loginForm').classList.add('active');
-                document.getElementById('signupForm').classList.remove('active');
-                this.classList.add('active');
-                document.getElementById('signupToggle').classList.remove('active');
-            });
-            
-            document.getElementById('signupToggle').addEventListener('click', function() {
-                document.getElementById('signupForm').classList.add('active');
-                document.getElementById('loginForm').classList.remove('active');
-                this.classList.add('active');
-                document.getElementById('loginToggle').classList.remove('active');
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize particles.js
-            particlesJS('particles-js', {
-                "particles": {
-                    "number": {
-                        "value": 150,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#00bcd4"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.7,
-                        "random": true,
-                        "anim": {
-                            "enable": true,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 4,
-                        "random": true,
-                        "anim": {
-                            "enable": true,
-                            "speed": 4,
-                            "size_min": 0.3,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#00bcd4",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 4,
-                        "direction": "none",
-                        "random": true,
-                        "straight": false,
-                        "out_mode": "bounce",
-                        "bounce": true,
-                        "attract": {
-                            "enable": true,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "window",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "repulse"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "repulse": {
-                            "distance": 100,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        }
-                    }
-                },
-                "retina_detect": true
-            });
-
-            // Set minimum date for DOB
-            const dobInput = document.getElementById('dob');
-            const today = new Date();
-            const minDOB = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
-            dobInput.max = minDOB.toISOString().split("T")[0];
-
-            // Form toggle functionality
-            document.getElementById('loginToggle').addEventListener('click', function() {
-                document.getElementById('loginForm').classList.add('active');
-                document.getElementById('signupForm').classList.remove('active');
-                this.classList.add('active');
-                document.getElementById('signupToggle').classList.remove('active');
-            });
-            
-            document.getElementById('signupToggle').addEventListener('click', function() {
-                document.getElementById('signupForm').classList.add('active');
-                document.getElementById('loginForm').classList.remove('active');
-                this.classList.add('active');
-                document.getElementById('loginToggle').classList.remove('active');
-            });
-        });
-    </script>
-
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-    particlesJS("particles-js", {
-        "particles": {
-            "number": {
-                "value": 80,
-                "density": {
-                    "enable": true,
-                    "value_area": 800
-                }
-            },
-            "color": {
-                "value": "#00bcd4"
-            },
-            "shape": {
-                "type": "circle",
-                "stroke": {
-                    "width": 0,
-                    "color": "#000000"
-                },
-                "polygon": {
-                    "nb_sides": 5
-                }
-            },
-            "opacity": {
-                "value": 0.5,
-                "random": false,
-                "anim": {
-                    "enable": false,
-                    "speed": 1,
-                    "opacity_min": 0.1,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 3,
-                "random": true,
-                "anim": {
-                    "enable": false,
-                    "speed": 40,
-                    "size_min": 0.1,
-                    "sync": false
-                }
-            },
-            "line_linked": {
-                "enable": true,
-                "distance": 150,
-                "color": "#00bcd4",
-                "opacity": 0.4,
-                "width": 1
-            },
-            "move": {
-                "enable": true,
-                "speed": 3,
-                "direction": "none",
-                "random": false,
-                "straight": false,
-                "out_mode": "out",
-                "bounce": false,
-                "attract": {
-                    "enable": true,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                }
-            }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": {
-                    "enable": true,
-                    "mode": "grab"
-                },
-                "onclick": {
-                    "enable": true,
-                    "mode": "push"
-                },
-                "resize": true
-            },
-            "modes": {
-                "grab": {
-                    "distance": 140,
-                    "line_linked": {
-                        "opacity": 1
-                    }
-                },
-                "bubble": {
-                    "distance": 400,
-                    "size": 40,
-                    "duration": 2,
-                    "opacity": 8,
-                    "speed": 3
-                },
-                "repulse": {
-                    "distance": 200,
-                    "duration": 0.4
-                },
-                "push": {
-                    "particles_nb": 4
-                },
-                "remove": {
-                    "particles_nb": 2
-                }
-            }
-        },
-        "retina_detect": true
+      }
     });
-</script>
 
-    
-    <!-- Main script -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    window.onload = setMinDOB;
+  </script>
 
-
-
-
-
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 150, "density": { "enable": true, "value_area": 800 }},
+        "color": { "value": "#00bcd4" },
+        "shape": { "type": "circle" },
+        "opacity": {
+          "value": 0.7, "random": true,
+          "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false }
+        },
+        "size": {
+          "value": 4, "random": true,
+          "anim": { "enable": true, "speed": 4, "size_min": 0.3, "sync": false }
+        },
+        "line_linked": {
+          "enable": true, "distance": 150, "color": "#00bcd4",
+          "opacity": 0.4, "width": 1
+        },
+        "move": {
+          "enable": true, "speed": 4, "direction": "none", "random": true,
+          "straight": false, "out_mode": "bounce", "bounce": true,
+          "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 }
+        }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "repulse": { "distance": 100, "duration": 0.4 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
