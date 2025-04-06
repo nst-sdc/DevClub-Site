@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NST-SDC</title>
-    <link rel="stylesheet" href="/home.css">
+    <title>NST-SDC Gallery | Events, Workshops, Projects & Team</title>
+    
+    <meta name="title" content="NST-SDC Gallery | Events, Workshops, Projects & Team">
+    <meta name="description" content="Explore NST-SDC's gallery showcasing our events, workshops, projects, and team moments. Witness our journey in technology and innovation.">
+    <meta name="keywords" content="NST-SDC, gallery, events, workshops, projects, team, technology, innovation, coding, development, student club">
+    <meta name="author" content="NST-SDC">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nst-sdc.org/gallery.html">
+    <meta property="og:title" content="NST-SDC Gallery | Events, Workshops, Projects & Team">
+    <meta property="og:description" content="Explore NST-SDC's gallery showcasing our events, workshops, projects, and team moments. Witness our journey in technology and innovation.">
+    <meta property="og:image" content="https://nst-sdc.org/photos/event1-large.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nst-sdc.org/gallery.html">
+    <meta property="twitter:title" content="NST-SDC Gallery | Events, Workshops, Projects & Team">
+    <meta property="twitter:description" content="Explore NST-SDC's gallery showcasing our events, workshops, projects, and team moments. Witness our journey in technology and innovation.">
+    <meta property="twitter:image" content="https://nst-sdc.org/photos/event1-large.webp">
+    
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="msapplication-TileColor" content="#2c3e50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
 <div class="body">
@@ -47,33 +80,549 @@
                 <img src="/photos/instagram.png" alt="Instagram" class="img">
                 <img src="/photos/discord.png" alt="Discord" class="img">
                 <img src="/photos/youtube.png" alt="YouTube" class="img">
+
+    <div class="main-content">
+        <!-------------header------------>
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>NST-SDC</h1>
+                    <div class="tagline">Code, Create, Connect!</div>
+                </div>
+                <div id="date-time"></div>
+            </div>
+        </header>
+        
+        <div class="nav">
+            <div class="nav-item">
+                <a href="home.html">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="events.html">Events</a>
+            </div>
+            <div class="nav-item active">
+                <a href="gallery.html">Gallery</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html">Contact</a>
             </div>
         </div>
-    </footer>
-</div>
-<!-- /footer -->
-</div>
+        <!-------------/header/------------>
+
+        <section class="gallery-section" aria-labelledby="gallery-title">
+            <div class="gallery-header">
+                <h2 id="gallery-title" class="section-title">Our Gallery</h2>
+                <p>Explore our journey through these memorable moments</p>
+            </div>
+
+            <div class="filter-buttons" role="tablist" aria-label="Gallery categories">
+                <button 
+                    class="filter-btn active" 
+                    data-filter="all" 
+                    role="tab" 
+                    aria-selected="true" 
+                    aria-controls="all-gallery"
+                    id="filter-all"
+                >All</button>
+                <button 
+                    class="filter-btn" 
+                    data-filter="events" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="events-gallery"
+                    id="filter-events"
+                >Events</button>
+                <button 
+                    class="filter-btn" 
+                    data-filter="workshops" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="workshops-gallery"
+                    id="filter-workshops"
+                >Workshops</button>
+                <button 
+                    class="filter-btn" 
+                    data-filter="projects" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="projects-gallery"
+                    id="filter-projects"
+                >Projects</button>
+                <button 
+                    class="filter-btn" 
+                    data-filter="team" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="team-gallery"
+                    id="filter-team"
+                >Team</button>
+            </div>
+
+            <div class="masonry-grid" role="tabpanel" aria-labelledby="filter-all">
+                <!-- Event Images -->
+                <div class="gallery-item" data-category="events" id="all-gallery" tabindex="0" role="button" aria-label="View Web Development Workshop image">
+                    <img 
+                        src="photos/event1-small.webp" 
+                        srcset="photos/event1-small.webp 400w, photos/event1-medium.webp 800w, photos/event1-large.webp 1200w"
+                        sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
+                        alt="Students participating in Web Development Workshop at NST-SDC, learning modern web technologies"
+                        loading="lazy"
+                        width="1200"
+                        height="800"
+                    >
+                    <div class="item-overlay">
+                        <h3 class="item-title">Web Development Workshop</h3>
+                        <p class="item-date">March 15, 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" id="events-gallery">
+                    <img 
+                        src="photos/event2-small.webp" 
+                        srcset="photos/event2-small.webp 400w, photos/event2-medium.webp 800w, photos/event2-large.webp 1200w"
+                        sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
+                        alt="Hackathon 2024 participants working on their projects in the NST-SDC innovation hub"
+                        loading="lazy"
+                        width="1200"
+                        height="800"
+                    >
+                    <div class="item-overlay">
+                        <h3 class="item-title">Hackathon 2024</h3>
+                        <p class="item-date">February 28, 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="photos/event3.jpeg" alt="Tech Talk Series featuring industry experts sharing insights with NST-SDC members">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Tech Talk Series</h3>
+                        <p class="item-date">January 20, 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="photos/event4.jpeg" alt="Code Maverick competition participants showcasing their coding skills">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Code Maverick</h3>
+                        <p class="item-date">March 2024</p>
+                    </div>
+                </div>
+
+                <!-- Workshop Images -->
+                <div class="gallery-item" data-category="workshops" id="workshops-gallery">
+                    <img src="photos/heroimg1.jpeg" alt="React Workshop session with hands-on coding exercises and instructor guidance">
+                    <div class="item-overlay">
+                        <h3 class="item-title">React Workshop</h3>
+                        <p class="item-date">March 10, 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="workshops">
+                    <img src="photos/heroimg2.jpeg" alt="UI/UX Design workshop participants creating wireframes and prototypes">
+                    <div class="item-overlay">
+                        <h3 class="item-title">UI/UX Design</h3>
+                        <p class="item-date">February 15, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Project Images -->
+                <div class="gallery-item" data-category="projects" id="projects-gallery">
+                    <img src="photos/heroimg3.jpeg" alt="E-Learning Platform project demo showcasing interactive learning features">
+                    <div class="item-overlay">
+                        <h3 class="item-title">E-Learning Platform</h3>
+                        <p class="item-date">December 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="projects">
+                    <img src="photos/codemaverick.jpeg" alt="Smart Campus App interface demonstration with campus navigation features">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Smart Campus App</h3>
+                        <p class="item-date">November 2023</p>
+                    </div>
+                </div>
+
+                <!-- Team Images -->
+                <div class="gallery-item" data-category="team" id="team-gallery">
+                    <img src="photos/profile.jpeg" alt="NST-SDC Core Team 2024 group photo with all team members">
+                    <div class="item-overlay">
+                        <h3 class="item-title">Core Team 2024</h3>
+                        <p class="item-date">January 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Lightbox -->
+        <div 
+            class="lightbox" 
+            role="dialog" 
+            aria-modal="true" 
+            aria-label="Image viewer"
+            aria-hidden="true"
+            tabindex="-1"
+        >
+            <div class="lightbox-overlay" role="presentation"></div>
+            <div class="lightbox-content" role="document">
+                <button 
+                    class="lightbox-close" 
+                    role="button" 
+                    aria-label="Close image viewer"
+                    tabindex="0"
+                >&times;</button>
+                <div class="lightbox-image-container">
+                    <img 
+                        src="" 
+                        alt="" 
+                        role="presentation"
+                        class="lightbox-image"
+                    >
+                    <div class="lightbox-caption">
+                        <h3 class="lightbox-title"></h3>
+                        <p class="lightbox-date"></p>
+                    </div>
+                </div>
+                <div class="lightbox-nav">
+                    <button 
+                        class="prev-btn" 
+                        aria-label="Previous image"
+                        tabindex="0"
+                    >
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button 
+                        class="next-btn" 
+                        aria-label="Next image"
+                        tabindex="0"
+                    >
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">NST-SDC</div>
+                    <p>Empowering students with the skills and knowledge needed to excel in the tech industry.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Visit our GitHub profile">
+                            <img src="photos/github.webp" alt="GitHub logo" width="32" height="32" loading="lazy">
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Follow us on Instagram">
+                            <img src="photos/instagram.webp" alt="Instagram logo" width="32" height="32" loading="lazy">
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Join our Discord community">
+                            <img src="photos/discord.webp" alt="Discord logo" width="32" height="32" loading="lazy">
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Subscribe to our YouTube channel">
+                            <img src="photos/youtube.webp" alt="YouTube logo" width="32" height="32" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> NST Campus, Innovation Hub</li>
+                            <li><i class="fas fa-envelope" aria-hidden="true"></i> contact@nstsdc.org</li>
+                            <li><i class="fas fa-phone" aria-hidden="true"></i> +91 1234567890</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to update date and time
+            function updateDateTime() {
+                const now = new Date();
+                const options = { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric', 
+                    hour: '2-digit', 
+                    minute: '2-digit', 
+                    second: '2-digit' 
+                };
+                document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+            }
+
+            // Initial call to set the date and time
+            updateDateTime();
+
+            // Update the time every second
+            setInterval(updateDateTime, 1000);
+
+            // Enhanced gallery filtering with keyboard support
+            const filterContainer = document.querySelector('.filter-buttons');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            let currentFilterIndex = 0;
+
+            if (filterContainer) {
+                // Handle keyboard navigation for filter buttons
+                filterContainer.addEventListener('keydown', function(e) {
+                    switch (e.key) {
+                        case 'ArrowRight':
+                            e.preventDefault();
+                            currentFilterIndex = (currentFilterIndex + 1) % filterButtons.length;
+                            filterButtons[currentFilterIndex].focus();
+                            break;
+                        case 'ArrowLeft':
+                            e.preventDefault();
+                            currentFilterIndex = (currentFilterIndex - 1 + filterButtons.length) % filterButtons.length;
+                            filterButtons[currentFilterIndex].focus();
+                            break;
+                        case 'Home':
+                            e.preventDefault();
+                            currentFilterIndex = 0;
+                            filterButtons[0].focus();
+                            break;
+                        case 'End':
+                            e.preventDefault();
+                            currentFilterIndex = filterButtons.length - 1;
+                            filterButtons[filterButtons.length - 1].focus();
+                            break;
+                    }
+                });
+
+                // Enhanced click handling with focus management
+                filterContainer.addEventListener('click', function(e) {
+                    const button = e.target.closest('.filter-btn');
+                    if (!button) return;
+
+                    // Update filter buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+                    button.classList.add('active');
+                    button.setAttribute('aria-selected', 'true');
+                    currentFilterIndex = Array.from(filterButtons).indexOf(button);
+
+                    // Update gallery items
+                    const filter = button.getAttribute('data-filter');
+                    galleryItems.forEach(item => {
+                        const shouldShow = filter === 'all' || item.getAttribute('data-category') === filter;
+                        item.style.display = shouldShow ? 'block' : 'none';
+                        if (shouldShow) {
+                            item.setAttribute('tabindex', '0');
+                        } else {
+                            item.setAttribute('tabindex', '-1');
+                        }
+                    });
+
+                    // Focus the first visible item
+                    const firstVisibleItem = document.querySelector('.gallery-item[style="display: block"]');
+                    if (firstVisibleItem) {
+                        firstVisibleItem.focus();
+                    }
+                });
+            }
+
+            // Enhanced lightbox functionality
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = document.querySelector('.lightbox-image');
+            const lightboxTitle = document.querySelector('.lightbox-title');
+            const lightboxDate = document.querySelector('.lightbox-date');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentImageIndex = 0;
+            let galleryImages = [];
+            let trapFocus = false;
+
+            // Initialize gallery images
+            galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+
+            // Handle image clicks with keyboard support
+            document.querySelector('.masonry-grid').addEventListener('click', function(e) {
+                const item = e.target.closest('.gallery-item');
+                if (!item) return;
+
+                const img = item.querySelector('img');
+                if (!img) return;
+
+                currentImageIndex = galleryImages.indexOf(img);
+                if (currentImageIndex === -1) return;
+
+                openLightbox(img);
+            });
+
+            // Keyboard support for gallery items
+            document.querySelector('.masonry-grid').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const item = e.target.closest('.gallery-item');
+                    if (item) {
+                        const img = item.querySelector('img');
+                        if (img) {
+                            currentImageIndex = galleryImages.indexOf(img);
+                            openLightbox(img);
+                        }
+                    }
+                }
+            });
+
+            function openLightbox(img) {
+                try {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightboxTitle.textContent = img.closest('.gallery-item').querySelector('.item-title').textContent;
+                    lightboxDate.textContent = img.closest('.gallery-item').querySelector('.item-date').textContent;
+                    
+                    lightbox.classList.add('active');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                    lightbox.focus();
+                    
+                    // Trap focus within lightbox
+                    trapFocus = true;
+                    document.body.style.overflow = 'hidden';
+                } catch (error) {
+                    console.error('Error opening lightbox:', error);
+                }
+            }
+
+            // Enhanced lightbox controls
+            if (lightbox) {
+                // Close button
+                closeBtn.addEventListener('click', closeLightbox);
+                closeBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        closeLightbox();
+                    }
+                });
+
+                // Previous button
+                prevBtn.addEventListener('click', showPreviousImage);
+                prevBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        showPreviousImage();
+                    }
+                });
+
+                // Next button
+                nextBtn.addEventListener('click', showNextImage);
+                nextBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        showNextImage();
+                    }
+                });
+
+                // Close when clicking outside
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox || e.target.classList.contains('lightbox-overlay')) {
+                        closeLightbox();
+                    }
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', function(e) {
+                    if (!lightbox.classList.contains('active')) return;
+
+                    switch (e.key) {
+                        case 'Escape':
+                            closeLightbox();
+                            break;
+                        case 'ArrowLeft':
+                            showPreviousImage();
+                            break;
+                        case 'ArrowRight':
+                            showNextImage();
+                            break;
+                        case 'Tab':
+                            if (trapFocus) {
+                                const focusableElements = lightbox.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                                const firstFocusableElement = focusableElements[0];
+                                const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+                                if (e.shiftKey) {
+                                    if (document.activeElement === firstFocusableElement) {
+                                        lastFocusableElement.focus();
+                                        e.preventDefault();
+                                    }
+                                } else {
+                                    if (document.activeElement === lastFocusableElement) {
+                                        firstFocusableElement.focus();
+                                        e.preventDefault();
+                                    }
+                                }
+                            }
+                            break;
+                    }
+                });
+            }
+
+            function showPreviousImage() {
+                try {
+                    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                    updateLightboxImage();
+                } catch (error) {
+                    console.error('Error showing previous image:', error);
+                }
+            }
+
+            function showNextImage() {
+                try {
+                    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                    updateLightboxImage();
+                } catch (error) {
+                    console.error('Error showing next image:', error);
+                }
+            }
+
+            function updateLightboxImage() {
+                const img = galleryImages[currentImageIndex];
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxTitle.textContent = img.closest('.gallery-item').querySelector('.item-title').textContent;
+                lightboxDate.textContent = img.closest('.gallery-item').querySelector('.item-date').textContent;
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                trapFocus = false;
+                document.body.style.overflow = '';
+                
+                // Return focus to the clicked gallery item
+                const clickedItem = document.querySelector(`.gallery-item:nth-child(${currentImageIndex + 1})`);
+                if (clickedItem) {
+                    clickedItem.focus();
+                }
+            }
+
+            // Error handling for image loading
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function(e) {
+                    console.error('Error loading image:', e.target.src);
+                    e.target.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.className = 'image-error';
+                    fallback.textContent = 'Image failed to load';
+                    e.target.parentNode.appendChild(fallback);
+                });
+            });
+        });
+    </script>
 </body>
-<script>
-    // Function to update date and time
-function updateDateTime() {
-    const now = new Date();
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit' 
-    };
-    document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
-}
-
-// Initial call to set the date and time
-updateDateTime();
-
-// Update the time every second
-setInterval(updateDateTime, 1000);
-</script>
 </html>
