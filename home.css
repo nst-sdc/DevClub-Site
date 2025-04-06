@@ -45,7 +45,9 @@ a {
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
+    will-change: transform;
 }
 
 /* Particles Background */
@@ -59,7 +61,7 @@ img {
     opacity: 0.6;
     pointer-events: none;
     background-color: var(--dark-color);
-    transition: var(--transition);
+    will-change: transform;
 }
 
 body.light-theme #particles-js {
@@ -194,7 +196,7 @@ header {
     top: 0;
     z-index: 100;
     width: 100%;
-    transition: var(--transition);
+    will-change: transform;
 }
 
 body.light-theme header {
@@ -380,6 +382,7 @@ body.light-theme .hero-text p {
     overflow: hidden;
     border-radius: 12px;
     box-shadow: var(--shadow);
+    will-change: transform;
 }
 
 body.light-theme .carousel-container {
@@ -388,8 +391,9 @@ body.light-theme .carousel-container {
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
     width: 300%;
+    will-change: transform;
 }
 
 .carousel-slide {
@@ -494,10 +498,11 @@ body.light-theme .section-title {
 .feature-card {
     background-color: var(--dark-card);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    transition: var(--transition);
+    transition: transform 0.2s ease;
     text-align: center;
+    will-change: transform;
 }
 
 body.light-theme .feature-card {
@@ -506,7 +511,7 @@ body.light-theme .feature-card {
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -578,11 +583,12 @@ body.light-theme .events-section {
     min-width: calc(50% - 1rem);
     margin-right: 1rem;
     background-color: var(--dark-card);
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: var(--transition);
+    transition: transform 0.2s ease;
     flex-shrink: 0;
+    will-change: transform;
 }
 
 body.light-theme .event-card {
@@ -755,13 +761,14 @@ body.light-theme .news-section {
 
 .news-card {
     padding: 1.5rem;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    transition: var(--transition);
+    transition: transform 0.2s ease;
     background-color: var(--dark-card);
     height: 100%;
     display: flex;
     flex-direction: column;
+    will-change: transform;
 }
 
 body.light-theme .news-card {
@@ -1025,6 +1032,10 @@ body.light-theme .social-icon {
 }
 
 @media (max-width: 768px) {
+    .welcome-splash {
+        display: flex;
+    }
+    
     .logo-animation {
         font-size: 2.8rem;
     }
@@ -1074,6 +1085,14 @@ body.light-theme .social-icon {
     .social-icons {
         justify-content: center;
     }
+    
+    #particles-js {
+        display: none;
+    }
+    
+    .main-content {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1118,11 +1137,4 @@ body.light-theme .social-icon {
 
 .fab {
     font-family: "Font Awesome 5 Brands";
-}
-
-/* Ensure particles interactive experience */
-@media (max-width: 768px) {
-    #particles-js {
-        opacity: 0.4;
-    }
 }

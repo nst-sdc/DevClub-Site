@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
 
+// Serve static files from the current directory
+app.use(express.static(__dirname));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
