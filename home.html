@@ -34,11 +34,7 @@
                     <div id="date-time"></div>
                     <div class="theme-toggle">
                         <input type="checkbox" id="theme-switch" class="theme-switch">
-                        <label for="theme-switch" class="theme-label">
-                            <i class="fas fa-sun"></i>
-                            <i class="fas fa-moon"></i>
-                            <span class="theme-ball"></span>
-                        </label>
+                        <label for="theme-switch" class="theme-label"></label>
                     </div>
                 </div>
             </div>
@@ -310,231 +306,132 @@
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>© 2025 NST-SDC: All rights reserved</p>
-                </div>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                </div>
+                <footer>
+                    <div class="footer-content">
+                    
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" aria-label="GitHub"><img src="/photos/github.png" alt="GitHub"></a>
+                            <a href="#" class="social-icon" aria-label="Instagram"><img src="/photos/instagram.png" alt="Instagram"></a>
+                            <a href="#" class="social-icon" aria-label="Discord"><img src="/photos/discord.png" alt="Discord"></a>
+                            <a href="#" class="social-icon" aria-label="YouTube"><img src="/photos/youtube.png" alt="YouTube"></a>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="theme.js"></script>
     <script>
-        // Particles JS Configuration
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#00bcd4"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#00bcd4",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-
-        // Welcome splash animation
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.getElementById('welcome-splash').classList.add('fade-out');
-                document.getElementById('main-content').classList.add('fade-in');
-            }, 2000);
-            
-            // Check for saved theme preference or use default dark theme
-            if (localStorage.getItem('theme') === 'light') {
-                document.body.classList.add('light-theme');
-                document.getElementById('theme-switch').checked = true;
-            }
-        });
-        
-        // Theme toggle functionality
-        const themeSwitch = document.getElementById('theme-switch');
-        themeSwitch.addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('light-theme');
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.body.classList.remove('light-theme');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-        
-        // Function to update date and time
+        // Date and Time
         function updateDateTime() {
             const now = new Date();
             const options = { 
                 weekday: 'long', 
                 year: 'numeric', 
                 month: 'long', 
-                day: 'numeric', 
-                hour: '2-digit', 
-                minute: '2-digit'
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
             };
             document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
         }
 
-        // Initial call to set the date and time
+        setInterval(updateDateTime, 1000);
         updateDateTime();
-        setInterval(updateDateTime, 60000);
 
-        // Hero carousel
-        const carouselTrack = document.getElementById('carousel-track');
+        // Welcome Splash
+        const welcomeSplash = document.getElementById('welcome-splash');
+        const mainContent = document.getElementById('main-content');
+
+        setTimeout(() => {
+            welcomeSplash.classList.add('fade-out');
+            mainContent.classList.add('fade-in');
+        }, 3000);
+
+        // Carousel
+        const track = document.getElementById('carousel-track');
+        const slides = Array.from(track.children);
         const indicators = document.querySelectorAll('.indicator');
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        
-        function updateCarousel() {
-            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-            // Update indicators
+
+        function moveToSlide(track, currentSlide, targetSlide) {
+            track.style.transform = `translateX(-${targetSlide * 100}%)`;
+            currentSlide = targetSlide;
+            updateIndicators();
+            return currentSlide;
+        }
+
+        function updateIndicators() {
             indicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
+                indicator.classList.toggle('active', index === currentSlide);
             });
         }
-        
-        // Auto slide
+
+        // Auto-advance carousel
         setInterval(() => {
             currentSlide = (currentSlide + 1) % slides.length;
-            updateCarousel();
+            moveToSlide(track, currentSlide, currentSlide);
         }, 5000);
-        
-        // Indicator click events
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                currentSlide = index;
-                updateCarousel();
-            });
-        });
-        
-        // Events slider
-        const eventsTrack = document.querySelector('.events-track');
-        const prevBtn = document.getElementById('prev-event');
-        const nextBtn = document.getElementById('next-event');
-        let currentEventSlide = 0;
-        const eventCards = document.querySelectorAll('.event-card');
-        const visibleCards = window.innerWidth > 768 ? 2 : 1;
-        
-        function updateEventSlider() {
-            const slideWidth = 100 / visibleCards;
-            eventsTrack.style.transform = `translateX(-${currentEventSlide * slideWidth}%)`;
-        }
-        
-        prevBtn.addEventListener('click', () => {
-            if (currentEventSlide > 0) {
-                currentEventSlide--;
-                updateEventSlider();
-            }
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            if (currentEventSlide < eventCards.length - visibleCards) {
-                currentEventSlide++;
-                updateEventSlider();
-            }
+
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#00bcd4'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00bcd4',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
         });
     </script>
 </body>
